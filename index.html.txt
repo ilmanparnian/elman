@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="لوکس — فروشگاه آنلاین لوازم آرایشی و محصولات زیبایی لوکس. بهترین محصولات آرایشی، مراقبت از پوست و عطر." />
+<title>لوکس — فروشگاه لوازم آرایشی و زیبایی لوکس</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.0.16/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.0.16/700.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.0.16/600.css" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    direction: rtl;
+  }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  a { color: inherit; text-decoration: none; }
+  input, select, textarea { font-family: inherit; }
+
+  :root[data-theme="light"] {
+    --bg: #FAF7F2;
+    --bg-alt: #FFFFFF;
+    --bg-elev: #FFFFFF;
+    --text: #1A1A1A;
+    --text-muted: #6B6B6B;
+    --border: #E5DDD2;
+    --accent: #B76E79;
+    --accent-hover: #9E5A63;
+    --accent-soft: rgba(183, 110, 121, 0.1);
+    --gold: #C9A96E;
+    --plum: #2D1B2E;
+    --success: #4A7C59;
+    --danger: #C44536;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,0.12);
+    --gradient: linear-gradient(135deg, #B76E79 0%, #C9A96E 100%);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F0F14;
+    --bg-alt: #1A1A22;
+    --bg-elev: #1A1A22;
+    --text: #F5F1EA;
+    --text-muted: #A8A39C;
+    --border: #2A2A35;
+    --accent: #D4878F;
+    --accent-hover: #E59CA3;
+    --accent-soft: rgba(212, 135, 143, 0.15);
+    --gold: #E5C48A;
+    --plum: #E8D5D8;
+    --success: #6BA87A;
+    --danger: #E06B5C;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,0.7);
+    --gradient: linear-gradient(135deg, #D4878F 0%, #E5C48A 100%);
+  }
+
+  .font-display { font-weight: 700; letter-spacing: -0.01em; }
+  .text-xs { font-size: 0.75rem; }
+  .text-sm { font-size: 0.875rem; }
+  .text-base { font-size: 1rem; }
+  .text-lg { font-size: 1.125rem; }
+  .text-xl { font-size: 1.25rem; }
+  .text-2xl { font-size: 1.5rem; }
+  .text-3xl { font-size: 1.875rem; }
+  .text-4xl { font-size: 2.25rem; }
+  .text-5xl { font-size: 3rem; }
+  .tracking-wide { letter-spacing: 0.05em; }
+  .tracking-wider { letter-spacing: 0.1em; }
+  .uppercase { text-transform: uppercase; }
+
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 80px 0; }
+  .section-sm { padding: 48px 0; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 28px; border-radius: 2px; font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.05em; transition: all 0.3s ease;
+    cursor: pointer; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--text); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .btn-accent { background: var(--accent); color: #fff; }
+  .btn-accent:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .btn-outline { border-color: var(--text); color: var(--text); background: transparent; }
+  .btn-outline:hover { background: var(--text); color: var(--bg); }
+  .btn-ghost { color: var(--text-muted); }
+  .btn-ghost:hover { color: var(--accent); }
+  .btn-sm { padding: 10px 18px; font-size: 0.75rem; }
+  .btn-block { width: 100%; }
+
+  .announcement {
+    background: var(--plum); color: #fff; text-align: center;
+    padding: 10px 16px; font-size: 0.8rem; letter-spacing: 0.05em;
+  }
+  :root[data-theme="dark"] .announcement { background: #1A1A22; }
+  .announcement strong { color: var(--gold); }
+
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 247, 242, 0.85); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+  :root[data-theme="dark"] .header { background: rgba(15, 15, 20, 0.85); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; max-width: 1400px; margin: 0 auto; }
+  .logo { font-size: 1.75rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text); }
+  .logo span { color: var(--accent); }
+  .nav { display: flex; gap: 32px; }
+  .nav-link {
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em;
+    color: var(--text); position: relative; padding: 4px 0; transition: color 0.3s;
+  }
+  .nav-link::after {
+    content: ''; position: absolute; bottom: -4px; right: 0; width: 0; height: 1px;
+    background: var(--accent); transition: width 0.3s ease;
+  }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link:hover::after { width: 100%; }
+  .nav-link.active { color: var(--accent); }
+  .nav-link.active::after { width: 100%; }
+  .header-actions { display: flex; align-items: center; gap: 12px; }
+  .icon-btn {
+    width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; transition: all 0.3s; position: relative;
+  }
+  .icon-btn:hover { background: var(--accent-soft); color: var(--accent); }
+  .icon-btn svg { width: 20px; height: 20px; }
+  .badge {
+    position: absolute; top: 4px; left: 4px; background: var(--accent); color: #fff;
+    font-size: 0.65rem; font-weight: 700; min-width: 18px; height: 18px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center; padding: 0 5px;
+  }
+  .menu-toggle { display: none; }
+
+  .hero {
+    position: relative; height: 85vh; min-height: 600px; overflow: hidden;
+    background: var(--bg-alt);
+  }
+  .hero-bg {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    filter: brightness(0.85);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start; padding: 0 8%; color: #fff;
+  }
+  .hero-eyebrow { font-size: 0.85rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 24px; }
+  .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; line-height: 1.2; margin-bottom: 24px; max-width: 700px; }
+  .hero-subtitle { font-size: 1.1rem; max-width: 500px; margin-bottom: 40px; opacity: 0.9; line-height: 1.8; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero .btn-primary { background: #fff; color: #000; }
+  .hero .btn-primary:hover { background: var(--accent); color: #fff; }
+
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-eyebrow { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; font-weight: 600; }
+  .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; }
+  .section-subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+  .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .category-card {
+    position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: 4px;
+    cursor: pointer; background: var(--bg-alt);
+  }
+  .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+  .category-card:hover img { transform: scale(1.08); }
+  .category-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 50%);
+  }
+  .category-label {
+    position: absolute; bottom: 24px; right: 24px; left: 24px; z-index: 2;
+    color: #fff; font-size: 1.5rem; font-weight: 700;
+  }
+  .category-label span { display: block; font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.8; margin-bottom: 8px; font-weight: 400; }
+
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px; }
+  .product-card {
+    background: var(--bg-alt); border-radius: 4px; overflow: hidden;
+    transition: all 0.4s ease; cursor: pointer; position: relative;
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .product-image { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--bg); }
+  .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .product-card:hover .product-image img { transform: scale(1.05); }
+  .product-tag {
+    position: absolute; top: 12px; right: 12px; z-index: 2;
+    background: var(--accent); color: #fff; padding: 6px 12px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
+  }
+  .product-tag.flash { background: var(--danger); }
+  .product-wishlist {
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.95);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+  }
+  .product-wishlist:hover { background: var(--accent); color: #fff; }
+  .product-wishlist.active { background: var(--accent); color: #fff; }
+  .product-wishlist svg { width: 16px; height: 16px; }
+  .product-quick-add {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+    background: var(--text); color: var(--bg); padding: 12px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
+    transform: translateY(100%); transition: transform 0.3s ease;
+  }
+  .product-card:hover .product-quick-add { transform: translateY(0); }
+  .product-info { padding: 20px; }
+  .product-brand { font-size: 0.75rem; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 6px; }
+  .product-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .product-rating { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; font-size: 0.8rem; color: var(--text-muted); }
+  .stars { color: var(--gold); letter-spacing: 2px; }
+  .product-price { display: flex; align-items: center; gap: 10px; }
+  .price-current { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+  .price-original { font-size: 0.9rem; color: var(--text-muted); text-decoration: line-through; }
+  .price-discount { font-size: 0.75rem; color: var(--danger); font-weight: 600; }
+
+  .flash-sale {
+    background: var(--plum); color: #fff; padding: 60px 0; position: relative; overflow: hidden;
+  }
+  :root[data-theme="dark"] .flash-sale { background: linear-gradient(135deg, #2D1B2E 0%, #1A1A22 100%); }
+  .flash-sale-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .flash-sale-content .section-eyebrow { color: var(--gold); }
+  .flash-sale-content .section-title { color: #fff; }
+  .flash-sale-content .section-subtitle { color: rgba(255,255,255,0.7); }
+  .countdown { display: flex; gap: 16px; margin: 32px 0; }
+  .countdown-item {
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    padding: 16px 20px; border-radius: 4px; min-width: 70px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .countdown-value { font-size: 2rem; font-weight: 700; display: block; }
+  .countdown-label { font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.7; }
+  .flash-sale .btn-primary { background: var(--gold); color: #000; }
+  .flash-sale .btn-primary:hover { background: #fff; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .feature { text-align: center; padding: 24px; }
+  .feature-icon { width: 48px; height: 48px; margin: 0 auto 16px; color: var(--accent); }
+  .feature-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .feature-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+  .testimonial {
+    background: var(--bg-alt); padding: 40px 32px; border-radius: 4px;
+    border: 1px solid var(--border); transition: all 0.3s;
+  }
+  .testimonial:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .testimonial-stars { color: var(--gold); margin-bottom: 16px; letter-spacing: 2px; }
+  .testimonial-text { font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; }
+  .testimonial-name { font-weight: 600; font-size: 0.95rem; }
+  .testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
+
+  .newsletter {
+    background: var(--bg-alt); padding: 80px 0; text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .newsletter-form { display: flex; max-width: 500px; margin: 32px auto 0; gap: 0; }
+  .newsletter-input {
+    flex: 1; padding: 16px 20px; border: 1px solid var(--border);
+    background: transparent; color: var(--text); font-size: 0.9rem; outline: none;
+    transition: border-color 0.3s; border-radius: 2px 0 0 2px;
+  }
+  .newsletter-input:focus { border-color: var(--accent); }
+  .newsletter-btn { padding: 16px 32px; background: var(--text); color: var(--bg); font-weight: 600; letter-spacing: 0.05em; font-size: 0.8rem; border-radius: 0 2px 2px 0; }
+  .newsletter-btn:hover { background: var(--accent); }
+
+  .footer { background: var(--plum); color: #fff; padding: 64px 0 24px; }
+  :root[data-theme="dark"] .footer { background: #0A0A0F; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand .logo { color: #fff; margin-bottom: 16px; display: inline-block; }
+  .footer-desc { opacity: 0.7; font-size: 0.9rem; margin-bottom: 24px; max-width: 300px; line-height: 1.8; }
+  .footer-social { display: flex; gap: 12px; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+  }
+  .footer-social a:hover { background: var(--accent); border-color: var(--accent); }
+  .footer-title { font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 20px; color: var(--gold); font-weight: 700; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { font-size: 0.9rem; opacity: 0.7; transition: opacity 0.3s; cursor: pointer; }
+  .footer-links a:hover { opacity: 1; color: var(--accent); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.8rem; opacity: 0.6; }
+
+  .shop-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; padding: 48px 0; }
+  .filters { position: sticky; top: 100px; height: fit-content; }
+  .filter-group { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .filter-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+  .filter-options { display: flex; flex-direction: column; gap: 10px; }
+  .filter-option { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; cursor: pointer; }
+  .filter-option input { accent-color: var(--accent); }
+  .filter-option:hover { color: var(--accent); }
+  .price-range { display: flex; gap: 12px; align-items: center; }
+  .price-input { flex: 1; padding: 8px 12px; border: 1px solid var(--border); background: var(--bg-alt); color: var(--text); border-radius: 2px; }
+  .shop-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+  .shop-count { font-size: 0.9rem; color: var(--text-muted); }
+  .shop-sort { padding: 10px 16px; border: 1px solid var(--border); background: var(--bg-alt); color: var(--text); border-radius: 2px; }
+  .search-bar {
+    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+    background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  .search-bar input { flex: 1; background: transparent; border: none; outline: none; color: var(--text); font-size: 0.95rem; }
+  .search-bar svg { color: var(--text-muted); }
+
+  .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 48px 0; }
+  .product-gallery { position: sticky; top: 100px; }
+  .product-main-image { aspect-ratio: 1; background: var(--bg-alt); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+  .product-main-image img { width: 100%; height: 100%; object-fit: cover; }
+  .product-thumbnails { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .product-thumbnail { aspect-ratio: 1; background: var(--bg-alt); border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.3s; }
+  .product-thumbnail.active { border-color: var(--accent); }
+  .product-thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+  .product-detail-info h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .product-detail-brand { font-size: 0.85rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; font-weight: 600; }
+  .product-detail-rating { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .product-detail-price { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; }
+  .product-detail-price .price-current { font-size: 2rem; }
+  .product-description { font-size: 0.95rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 32px; }
+  .product-options { margin-bottom: 32px; }
+  .option-label { font-size: 0.85rem; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 12px; }
+  .shade-options { display: flex; gap: 10px; flex-wrap: wrap; }
+  .shade { width: 36px; height: 36px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: all 0.3s; position: relative; }
+  .shade.active { border-color: var(--text); transform: scale(1.1); }
+  .size-options { display: flex; gap: 10px; }
+  .size-btn { padding: 10px 20px; border: 1px solid var(--border); border-radius: 2px; font-size: 0.85rem; transition: all 0.3s; }
+  .size-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .quantity-selector { display: flex; align-items: center; gap: 0; border: 1px solid var(--border); width: fit-content; border-radius: 2px; }
+  .quantity-btn { width: 40px; height: 40px; font-size: 1.1rem; transition: background 0.3s; }
+  .quantity-btn:hover { background: var(--accent-soft); }
+  .quantity-value { width: 50px; text-align: center; font-weight: 600; }
+  .product-actions { display: flex; gap: 12px; margin-bottom: 32px; }
+  .product-actions .btn { flex: 1; }
+  .product-meta { border-top: 1px solid var(--border); padding-top: 24px; }
+  .product-meta-item { display: flex; gap: 12px; padding: 8px 0; font-size: 0.9rem; }
+  .product-meta-item strong { min-width: 100px; }
+
+  .reviews-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .reviews-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+  .review-card { background: var(--bg-alt); padding: 24px; border-radius: 4px; margin-bottom: 16px; border: 1px solid var(--border); }
+  .review-header { display: flex; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+  .review-author { font-weight: 600; }
+  .review-date { font-size: 0.8rem; color: var(--text-muted); }
+  .review-text { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); }
+
+  .cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding: 48px 0; }
+  .cart-items { display: flex; flex-direction: column; gap: 16px; }
+  .cart-item { display: grid; grid-template-columns: 120px 1fr auto; gap: 24px; padding: 24px; background: var(--bg-alt); border-radius: 4px; align-items: center; border: 1px solid var(--border); }
+  .cart-item-image { aspect-ratio: 1; background: var(--bg); border-radius: 4px; overflow: hidden; }
+  .cart-item-image img { width: 100%; height: 100%; object-fit: cover; }
+  .cart-item-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+  .cart-item-info .product-brand { margin-bottom: 8px; }
+  .cart-item-price { font-weight: 700; font-size: 1.1rem; }
+  .cart-item-remove { color: var(--danger); font-size: 0.8rem; margin-top: 8px; }
+  .cart-item-remove:hover { text-decoration: underline; }
+  .cart-summary { background: var(--bg-alt); padding: 32px; border-radius: 4px; border: 1px solid var(--border); height: fit-content; position: sticky; top: 100px; }
+  .cart-summary h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+  .summary-row { display: flex; justify-content: space-between; padding: 12px 0; font-size: 0.95rem; }
+  .summary-row.total { border-top: 1px solid var(--border); margin-top: 12px; padding-top: 20px; font-weight: 700; font-size: 1.1rem; }
+  .coupon-form { display: flex; gap: 0; margin: 20px 0; }
+  .coupon-input { flex: 1; padding: 12px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-left: none; border-radius: 2px 0 0 2px; }
+  .coupon-btn { padding: 12px 20px; background: var(--text); color: var(--bg); font-size: 0.8rem; letter-spacing: 0.05em; font-weight: 600; border-radius: 0 2px 2px 0; }
+
+  .wishlist-grid { padding: 48px 0; }
+
+  .checkout-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; padding: 48px 0; }
+  .checkout-section { margin-bottom: 32px; }
+  .checkout-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-label { display: block; font-size: 0.85rem; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 8px; }
+  .form-input { width: 100%; padding: 12px 16px; border: 1px solid var(--border); background: var(--bg-alt); color: var(--text); border-radius: 2px; transition: border-color 0.3s; }
+  .form-input:focus { outline: none; border-color: var(--accent); }
+  .payment-methods { display: grid; gap: 12px; }
+  .payment-method { display: flex; align-items: center; gap: 12px; padding: 16px; border: 1px solid var(--border); border-radius: 4px; cursor: pointer; transition: all 0.3s; }
+  .payment-method.active { border-color: var(--accent); background: var(--accent-soft); }
+  .payment-method input { accent-color: var(--accent); }
+
+  .account-layout { display: grid; grid-template-columns: 240px 1fr; gap: 48px; padding: 48px 0; }
+  .account-nav { display: flex; flex-direction: column; gap: 4px; }
+  .account-nav-item { padding: 12px 16px; border-radius: 4px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-align: right; }
+  .account-nav-item:hover { background: var(--accent-soft); color: var(--accent); }
+  .account-nav-item.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .account-content { background: var(--bg-alt); padding: 32px; border-radius: 4px; border: 1px solid var(--border); }
+
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+    z-index: 1000; display: none; align-items: center; justify-content: center;
+    animation: fadeIn 0.3s ease;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--bg-alt); padding: 48px; border-radius: 4px; max-width: 440px; width: 90%;
+    position: relative; animation: slideUp 0.4s ease;
+  }
+  .modal-close { position: absolute; top: 16px; left: 16px; width: 32px; height: 32px; }
+  .modal h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; }
+  .modal-subtitle { color: var(--text-muted); margin-bottom: 32px; font-size: 0.9rem; }
+  .auth-tabs { display: flex; gap: 0; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .auth-tab { flex: 1; padding: 12px; text-align: center; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.3s; }
+  .auth-tab.active { color: var(--accent); border-color: var(--accent); }
+
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px; padding: 48px 0; }
+  .blog-card { background: var(--bg-alt); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.4s; border: 1px solid var(--border); }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .blog-image { aspect-ratio: 16/10; overflow: hidden; background: var(--bg); }
+  .blog-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+  .blog-card:hover .blog-image img { transform: scale(1.05); }
+  .blog-content { padding: 24px; }
+  .blog-category { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; font-weight: 600; }
+  .blog-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; line-height: 1.5; }
+  .blog-excerpt { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.8; }
+  .blog-meta { font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 16px; }
+
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 48px 0; }
+  .contact-info h2 { font-size: 2rem; font-weight: 700; margin-bottom: 24px; }
+  .contact-info > p { color: var(--text-muted); margin-bottom: 32px; line-height: 1.8; }
+  .contact-item { display: flex; gap: 16px; margin-bottom: 24px; }
+  .contact-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-item h4 { font-size: 0.95rem; margin-bottom: 4px; font-weight: 600; }
+  .contact-item p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+  .contact-form { background: var(--bg-alt); padding: 40px; border-radius: 4px; border: 1px solid var(--border); }
+
+  .admin-layout { display: grid; grid-template-columns: 240px 1fr; gap: 0; min-height: calc(100vh - 200px); }
+  .admin-sidebar { background: var(--bg-alt); border-right: none; border-left: 1px solid var(--border); padding: 24px 0; }
+  .admin-sidebar-header { padding: 0 24px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+  .admin-sidebar-header h3 { font-size: 1.25rem; font-weight: 700; }
+  .admin-nav { display: flex; flex-direction: column; gap: 4px; padding: 0 12px; }
+  .admin-nav-item { padding: 12px 16px; border-radius: 4px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 12px; text-align: right; }
+  .admin-nav-item:hover { background: var(--accent-soft); color: var(--accent); }
+  .admin-nav-item.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .admin-content { padding: 32px; overflow-x: auto; }
+  .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+  .admin-header h1 { font-size: 2rem; font-weight: 700; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 32px; }
+  .stat-card { background: var(--bg-alt); padding: 24px; border-radius: 4px; border: 1px solid var(--border); }
+  .stat-label { font-size: 0.8rem; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 8px; }
+  .stat-value { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+  .stat-change { font-size: 0.8rem; color: var(--success); }
+  .stat-change.negative { color: var(--danger); }
+  .admin-table { width: 100%; background: var(--bg-alt); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+  .admin-table th, .admin-table td { padding: 16px; text-align: right; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+  .admin-table th { background: var(--bg); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; color: var(--text-muted); }
+  .admin-table tr:last-child td { border-bottom: none; }
+  .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+  .status-badge.success { background: rgba(74, 124, 89, 0.15); color: var(--success); }
+  .status-badge.warning { background: rgba(201, 169, 110, 0.15); color: var(--gold); }
+  .status-badge.danger { background: rgba(196, 69, 54, 0.15); color: var(--danger); }
+
+  .tracking-timeline { position: relative; padding-right: 32px; padding-left: 0; }
+  .tracking-timeline::before { content: ''; position: absolute; right: 8px; left: auto; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tracking-step { position: relative; padding-bottom: 24px; }
+  .tracking-step::before { content: ''; position: absolute; right: -28px; left: auto; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--border); border: 3px solid var(--bg-alt); }
+  .tracking-step.completed::before { background: var(--success); }
+  .tracking-step.active::before { background: var(--accent); animation: pulse 2s infinite; }
+  .tracking-step h4 { font-size: 1rem; margin-bottom: 4px; font-weight: 600; }
+  .tracking-step p { font-size: 0.85rem; color: var(--text-muted); }
+
+  .toast-container { position: fixed; bottom: 24px; left: 24px; z-index: 2000; display: flex; flex-direction: column; gap: 12px; }
+  .toast {
+    background: var(--bg-alt); padding: 16px 24px; border-radius: 4px; box-shadow: var(--shadow-lg);
+    border-right: 4px solid var(--accent); display: flex; align-items: center; gap: 12px;
+    animation: slideInLeft 0.4s ease; min-width: 280px;
+  }
+  .toast.success { border-right-color: var(--success); }
+  .toast.error { border-right-color: var(--danger); }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes slideInLeft { from { opacity: 0; transform: translateX(-100px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(183, 110, 121, 0.5); } 50% { box-shadow: 0 0 0 8px rgba(183, 110, 121, 0); } }
+
+  .page { display: none; animation: fadeIn 0.4s ease; }
+  .page.active { display: block; }
+
+  @media (max-width: 968px) {
+    .nav { display: none; }
+    .menu-toggle { display: flex; }
+    .flash-sale-inner { grid-template-columns: 1fr; }
+    .shop-layout { grid-template-columns: 1fr; }
+    .filters { position: static; }
+    .product-detail { grid-template-columns: 1fr; gap: 32px; }
+    .product-gallery { position: static; }
+    .cart-layout, .checkout-layout, .contact-layout { grid-template-columns: 1fr; }
+    .account-layout { grid-template-columns: 1fr; }
+    .admin-layout { grid-template-columns: 1fr; }
+    .admin-sidebar { border-left: none; border-bottom: 1px solid var(--border); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-content { padding: 0 5%; }
+    .hero { height: 70vh; min-height: 500px; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .cart-item { grid-template-columns: 80px 1fr; }
+    .cart-item-price { grid-column: 1 / -1; }
+    .countdown { flex-wrap: wrap; }
+    .countdown-item { min-width: 60px; padding: 12px; }
+    .countdown-value { font-size: 1.5rem; }
+    .section { padding: 48px 0; }
+  }
+
+  .mobile-menu {
+    position: fixed; top: 0; left: 0; width: 100%; max-width: 360px; height: 100vh;
+    background: var(--bg-alt); z-index: 200; padding: 80px 32px 32px;
+    transform: translateX(-100%); transition: transform 0.4s ease;
+    box-shadow: var(--shadow-lg);
+  }
+  .mobile-menu.active { transform: translateX(0); }
+  .mobile-menu-close { position: absolute; top: 24px; left: 24px; }
+  .mobile-nav { display: flex; flex-direction: column; gap: 4px; }
+  .mobile-nav-link { padding: 16px 0; font-size: 1.1rem; border-bottom: 1px solid var(--border); cursor: pointer; }
+  .mobile-nav-link:hover { color: var(--accent); }
+
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="announcement">
+  ✦ ارسال رایگان برای سفارش‌های بالای ۵۰۰ هزار تومان · با کد <strong>LUXE20</strong> بیست درصد تخفیف بگیرید ✦
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <button class="icon-btn menu-toggle" onclick="toggleMobileMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a href="#" class="logo" onclick="navigate('home')">لوکس<span>.</span></a>
+    <nav class="nav">
+      <a class="nav-link" data-page="home" onclick="navigate('home')">خانه</a>
+      <a class="nav-link" data-page="shop" onclick="navigate('shop')">فروشگاه</a>
+      <a class="nav-link" data-page="categories" onclick="navigate('categories')">دسته‌بندی</a>
+      <a class="nav-link" data-page="blog" onclick="navigate('blog')">مجله</a>
+      <a class="nav-link" data-page="contact" onclick="navigate('contact')">تماس</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="toggleTheme()" title="تغییر تم">
+        <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" onclick="navigate('account')" title="حساب کاربری">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="icon-btn" onclick="navigate('wishlist')" title="علاقه‌مندی‌ها">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span class="badge" id="wishlist-badge">0</span>
+      </button>
+      <button class="icon-btn" onclick="navigate('cart')" title="سبد خرید">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="badge" id="cart-badge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="icon-btn mobile-menu-close" onclick="toggleMobileMenu()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="mobile-nav">
+    <div class="mobile-nav-link" onclick="navigate('home'); toggleMobileMenu()">خانه</div>
+    <div class="mobile-nav-link" onclick="navigate('shop'); toggleMobileMenu()">فروشگاه</div>
+    <div class="mobile-nav-link" onclick="navigate('categories'); toggleMobileMenu()">دسته‌بندی</div>
+    <div class="mobile-nav-link" onclick="navigate('blog'); toggleMobileMenu()">مجله</div>
+    <div class="mobile-nav-link" onclick="navigate('contact'); toggleMobileMenu()">تماس با ما</div>
+    <div class="mobile-nav-link" onclick="navigate('account'); toggleMobileMenu()">حساب کاربری</div>
+    <div class="mobile-nav-link" onclick="navigate('admin'); toggleMobileMenu()">پنل مدیریت</div>
+  </div>
+</div>
+
+<main class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1088a60e7-dfd4-4f77-869a-5e6a730a3333.png');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">کالکشن جدید · تابستان ۱۴۰۵</div>
+      <h1 class="hero-title">هنر زیبایی<br/>ماندگار</h1>
+      <p class="hero-subtitle">مجموعه‌ای منتخب از لوازم آرایشی لوکس، تهیه شده از بهترین مواد اولیه برای کسانی که قدر زیبایی بی‌نظیر را می‌دانند.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="navigate('shop')">مشاهده کالکشن</button>
+        <button class="btn btn-outline" style="color:#fff; border-color:#fff;" onclick="navigate('categories')">کاوش کنید</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">خرید بر اساس دسته‌بندی</div>
+        <h2 class="section-title">مجموعه‌های منتخب</h2>
+        <p class="section-subtitle">دسته‌بندی‌های منتخب ما را کاوش کنید، هر کدام نمایانگر اوج هنر زیبایی هستند.</p>
+      </div>
+      <div class="category-grid">
+        <div class="category-card" onclick="filterCategory('لب')">
+          <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1cda15bc1-a9b5-4eb2-b16d-a7e70a3d98d2.png" alt="لب" />
+          <div class="category-label"><span>۱۲ محصول</span>لب</div>
+        </div>
+        <div class="category-card" onclick="filterCategory('عطر')">
+          <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/139b66fad-5782-4727-a60a-11a9b7b9ca04.png" alt="عطر" />
+          <div class="category-label"><span>۸ محصول</span>عطر</div>
+        </div>
+        <div class="category-card" onclick="filterCategory('صورت')">
+          <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/14f7bdc60-0fb9-454c-9a43-a75b9cef1151.png" alt="صورت" />
+          <div class="category-label"><span>۱۵ محصول</span>صورت</div>
+        </div>
+        <div class="category-card" onclick="filterCategory('چشم')">
+          <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/102634018-d5a5-471a-a858-afd4addda487.png" alt="چشم" />
+          <div class="category-label"><span>۱۰ محصول</span>چشم</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flash-sale">
+    <div class="container">
+      <div class="flash-sale-inner">
+        <div class="flash-sale-content">
+          <div class="section-eyebrow">زمان محدود</div>
+          <h2 class="section-title">فروش ویژه<br/>تا ۴۰٪ تخفیف</h2>
+          <p class="section-subtitle">پیشنهادهای ویژه روی محبوب‌ترین محصولات لوکس ما. این فرصت را از دست ندهید — به زودی تمام می‌شود.</p>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item"><span class="countdown-value" id="cd-days">۰۲</span><span class="countdown-label">روز</span></div>
+            <div class="countdown-item"><span class="countdown-value" id="cd-hours">۱۴</span><span class="countdown-label">ساعت</span></div>
+            <div class="countdown-item"><span class="countdown-value" id="cd-mins">۳۲</span><span class="countdown-label">دقیقه</span></div>
+            <div class="countdown-item"><span class="countdown-value" id="cd-secs">۱۸</span><span class="countdown-label">ثانیه</span></div>
+          </div>
+          <button class="btn btn-primary" onclick="navigate('shop')">خرید فروش ویژه</button>
+        </div>
+        <div class="flash-sale-products">
+          <div class="product-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div class="product-card" onclick="viewProduct(1)">
+              <div class="product-image">
+                <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1cda15bc1-a9b5-4eb2-b16d-a7e70a3d98d2.png" />
+                <div class="product-tag flash">۴۰٪-</div>
+              </div>
+              <div class="product-info">
+                <div class="product-brand">لوکس</div>
+                <div class="product-name">رژ لب مات مخملی</div>
+                <div class="product-price">
+                  <span class="price-current">۲۸۰,۰۰۰</span>
+                  <span class="price-original">۴۶۰,۰۰۰</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-card" onclick="viewProduct(3)">
+              <div class="product-image">
+                <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/139b66fad-5782-4727-a60a-11a9b7b9ca04.png" />
+                <div class="product-tag flash">۳۰٪-</div>
+              </div>
+              <div class="product-info">
+                <div class="product-brand">لوکس</div>
+                <div class="product-name">عطر اکسیر گل رز</div>
+                <div class="product-price">
+                  <span class="price-current">۱,۰۵۰,۰۰۰</span>
+                  <span class="price-original">۱,۵۰۰,۰۰۰</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">پرفروش‌ترین‌ها</div>
+        <h2 class="section-title">محبوب‌ترین‌ها</h2>
+        <p class="section-subtitle">محبوب‌ترین محصولات ما، مورد علاقه علاقه‌مندان به زیبایی در سراسر جهان.</p>
+      </div>
+      <div class="product-grid" id="featured-products"></div>
+      <div style="text-align:center; margin-top:48px;">
+        <button class="btn btn-outline" onclick="navigate('shop')">مشاهده همه محصولات</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="features">
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <div class="feature-title">ارسال رایگان</div>
+          <div class="feature-desc">برای سفارش‌های بالای ۵۰۰ هزار تومان</div>
+        </div>
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="feature-title">پرداخت امن</div>
+          <div class="feature-desc">پرداخت رمزنگاری شده SSL</div>
+        </div>
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <div class="feature-title">پشتیبانی ۲۴/۷</div>
+          <div class="feature-desc">مشاوران زیبایی اختصاصی</div>
+        </div>
+        <div class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z"/><path d="M12 8v4l3 3"/></svg>
+          <div class="feature-title">بازگشت ۳۰ روزه</div>
+          <div class="feature-desc">بازگشت بدون دردسر</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">نظرات مشتریان</div>
+        <h2 class="section-title">آن‌ها چه می‌گویند</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">«کیفیت بی‌نظیر است. هر محصول حس یک تجربه لوکس را منتقل می‌کند. پوست من هرگز بهتر از این نبوده است.»</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">سا</div>
+            <div>
+              <div class="testimonial-name">سارا احمدی</div>
+              <div class="testimonial-role">خریدار تأیید شده</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">«لوکس روتین زیبایی من را متحول کرده است. توجه به جزئیات در هر محصول واقعاً چشمگیر است.»</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">نم</div>
+            <div>
+              <div class="testimonial-name">نازنین محمدی</div>
+              <div class="testimonial-role">خریدار تأیید شده</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">«بالاخره برندی که به وعده‌هایش عمل می‌کند. بسته‌بندی به تنهایی یک شاهکار هنری است.»</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">مر</div>
+            <div>
+              <div class="testimonial-name">مریم رضایی</div>
+              <div class="testimonial-role">خریدار تأیید شده</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="section-eyebrow">در ارتباط باشید</div>
+      <h2 class="section-title">به حلقه لوکس بپیوندید</h2>
+      <p class="section-subtitle">برای پیشنهادهای ویژه، نکات زیبایی و دسترسی زودهنگام به کالکشن‌های جدید عضو شوید.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" class="newsletter-input" placeholder="ایمیل خود را وارد کنید" required />
+        <button type="submit" class="newsletter-btn">عضویت</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<main class="page" id="page-shop">
+  <div class="container">
+    <div style="padding: 48px 0 24px;">
+      <div class="section-eyebrow">مجموعه ما</div>
+      <h1 class="font-display text-5xl" style="margin-bottom: 16px;">فروشگاه همه محصولات</h1>
+      <p style="color: var(--text-muted); max-width: 600px;">مجموعه کاملی از لوازم آرایشی لوکس ما را کشف کنید، منتخب برای علاقه‌مندان به زیبایی.</p>
+    </div>
+    <div class="search-bar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="جستجوی محصولات..." oninput="handleSearch(this.value)" />
+    </div>
+    <div class="shop-layout">
+      <aside class="filters">
+        <div class="filter-group">
+          <div class="filter-title">دسته‌بندی</div>
+          <div class="filter-options" id="category-filters"></div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">محدوده قیمت</div>
+          <div class="price-range">
+            <input type="number" class="price-input" id="price-min" placeholder="حداقل" value="0" onchange="applyFilters()" />
+            <span>تا</span>
+            <input type="number" class="price-input" id="price-max" placeholder="حداکثر" value="2000000" onchange="applyFilters()" />
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">امتیاز</div>
+          <div class="filter-options">
+            <label class="filter-option"><input type="radio" name="rating" value="4" onchange="applyFilters()" /> ۴ ستاره و بالاتر</label>
+            <label class="filter-option"><input type="radio" name="rating" value="3" onchange="applyFilters()" /> ۳ ستاره و بالاتر</label>
+            <label class="filter-option"><input type="radio" name="rating" value="0" checked onchange="applyFilters()" /> همه امتیازها</label>
+          </div>
+        </div>
+        <div class="filter-group" style="border: none;">
+          <button class="btn btn-outline btn-block btn-sm" onclick="resetFilters()">بازنشانی فیلترها</button>
+        </div>
+      </aside>
+      <div>
+        <div class="shop-header">
+          <div class="shop-count" id="shop-count">نمایش ۷ محصول</div>
+          <select class="shop-sort" id="shop-sort" onchange="applyFilters()">
+            <option value="featured">پیشنهادی</option>
+            <option value="price-low">قیمت: کم به زیاد</option>
+            <option value="price-high">قیمت: زیاد به کم</option>
+            <option value="rating">بیشترین امتیاز</option>
+            <option value="newest">جدیدترین</option>
+          </select>
+        </div>
+        <div class="product-grid" id="shop-products"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-categories">
+  <div class="container">
+    <div style="padding: 64px 0 48px; text-align: center;">
+      <div class="section-eyebrow">مرور</div>
+      <h1 class="font-display text-5xl" style="margin-bottom: 16px;">خرید بر اساس دسته‌بندی</h1>
+      <p class="section-subtitle">دقیقاً چیزی را که به دنبالش هستید پیدا کنید</p>
+    </div>
+    <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div class="category-card" onclick="filterCategory('لب')">
+        <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1cda15bc1-a9b5-4eb2-b16d-a7e70a3d98d2.png" />
+        <div class="category-label"><span>۱۲ محصول</span>لب</div>
+      </div>
+      <div class="category-card" onclick="filterCategory('عطر')">
+        <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/139b66fad-5782-4727-a60a-11a9b7b9ca04.png" />
+        <div class="category-label"><span>۸ محصول</span>عطر</div>
+      </div>
+      <div class="category-card" onclick="filterCategory('صورت')">
+        <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/14f7bdc60-0fb9-454c-9a43-a75b9cef1151.png" />
+        <div class="category-label"><span>۱۵ محصول</span>صورت</div>
+      </div>
+      <div class="category-card" onclick="filterCategory('چشم')">
+        <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/102634018-d5a5-471a-a858-afd4addda487.png" />
+        <div class="category-label"><span>۱۰ محصول</span>چشم</div>
+      </div>
+      <div class="category-card" onclick="filterCategory('مراقبت پوست')">
+        <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1c0dab8da-097d-40cd-922d-5e46a2897e08.png" />
+        <div class="category-label"><span>۱۴ محصول</span>مراقبت پوست</div>
+      </div>
+      <div class="category-card" onclick="filterCategory('بدن')">
+        <img src="https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1d8313c34-f84e-443a-bd48-14f53e3ed0e7.png" />
+        <div class="category-label"><span>۹ محصول</span>مراقبت بدن</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-product">
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-gallery">
+        <div class="product-main-image">
+          <img id="pd-main-image" src="" alt="" />
+        </div>
+        <div class="product-thumbnails" id="pd-thumbnails"></div>
+      </div>
+      <div class="product-detail-info">
+        <div class="product-detail-brand" id="pd-brand"></div>
+        <h1 id="pd-name"></h1>
+        <div class="product-detail-rating">
+          <span class="stars" id="pd-stars"></span>
+          <span id="pd-rating-text"></span>
+          <span style="color: var(--accent);">·</span>
+          <a style="color: var(--accent); font-size: 0.9rem;">۱۲۸ نظر</a>
+        </div>
+        <div class="product-detail-price">
+          <span class="price-current" id="pd-price"></span>
+          <span class="price-original" id="pd-original"></span>
+          <span class="price-discount" id="pd-discount"></span>
+        </div>
+        <p class="product-description" id="pd-desc"></p>
+        <div class="product-options">
+          <div class="option-label">رنگ</div>
+          <div class="shade-options" id="pd-shades"></div>
+        </div>
+        <div class="product-options">
+          <div class="option-label">سایز</div>
+          <div class="size-options" id="pd-sizes"></div>
+        </div>
+        <div class="product-options">
+          <div class="option-label">تعداد</div>
+          <div class="quantity-selector">
+            <button class="quantity-btn" onclick="changeQty(-1)">−</button>
+            <div class="quantity-value" id="pd-qty">۱</div>
+            <button class="quantity-btn" onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="addToCartFromDetail()">افزودن به سبد</button>
+          <button class="btn btn-outline" onclick="toggleWishlistFromDetail()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            علاقه‌مندی
+          </button>
+        </div>
+        <div class="product-meta">
+          <div class="product-meta-item"><strong>شناسه</strong><span id="pd-sku"></span></div>
+          <div class="product-meta-item"><strong>دسته‌بندی</strong><span id="pd-cat"></span></div>
+          <div class="product-meta-item"><strong>برچسب‌ها</strong><span>لوکس، ممتاز، گیاهی</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-section">
+      <div class="reviews-header">
+        <div>
+          <h2 class="font-display text-3xl">نظرات مشتریان</h2>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+            <span class="stars" style="font-size: 1.2rem;">★★★★★</span>
+            <span style="color: var(--text-muted);">۴.۸ از ۵ · ۱۲۸ نظر</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm">ثبت نظر</button>
+      </div>
+      <div id="reviews-list"></div>
+    </div>
+
+    <div style="padding: 48px 0;">
+      <div class="section-header">
+        <div class="section-eyebrow">شاید بپسندید</div>
+        <h2 class="section-title">پیشنهادی</h2>
+      </div>
+      <div class="product-grid" id="recommended-products"></div>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-cart">
+  <div class="container">
+    <div style="padding: 48px 0 24px;">
+      <h1 class="font-display text-5xl">سبد خرید</h1>
+      <p style="color: var(--text-muted); margin-top: 8px;" id="cart-count-text">۰ کالا در سبد شما</p>
+    </div>
+    <div class="cart-layout">
+      <div>
+        <div class="cart-items" id="cart-items"></div>
+        <div id="cart-empty" style="display:none; text-align: center; padding: 80px 24px;">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin: 0 auto 24px; opacity: 0.3;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          <h2 class="font-display text-2xl" style="margin-bottom: 16px;">سبد خرید شما خالی است</h2>
+          <p style="color: var(--text-muted); margin-bottom: 32px;">مجموعه لوکس ما را کاوش کنید و چیزی ویژه اضافه کنید.</p>
+          <button class="btn btn-primary" onclick="navigate('shop')">شروع خرید</button>
+        </div>
+      </div>
+      <div>
+        <div class="cart-summary">
+          <h2>خلاصه سفارش</h2>
+          <div class="coupon-form">
+            <input type="text" class="coupon-input" id="coupon-input" placeholder="کد تخفیف" />
+            <button class="coupon-btn" onclick="applyCoupon()">اعمال</button>
+          </div>
+          <div id="coupon-message" style="font-size: 0.85rem; margin-bottom: 16px;"></div>
+          <div class="summary-row"><span>جمع کل</span><span id="cart-subtotal">۰ تومان</span></div>
+          <div class="summary-row"><span>هزینه ارسال</span><span id="cart-shipping">۰ تومان</span></div>
+          <div class="summary-row" id="discount-row" style="display:none;"><span>تخفیف</span><span id="cart-discount" style="color: var(--success);">-۰ تومان</span></div>
+          <div class="summary-row"><span>مالیات (۹٪)</span><span id="cart-tax">۰ تومان</span></div>
+          <div class="summary-row total"><span>مبلغ نهایی</span><span id="cart-total">۰ تومان</span></div>
+          <button class="btn btn-primary btn-block" style="margin-top: 24px;" onclick="navigate('checkout')">ادامه خرید و پرداخت</button>
+          <button class="btn btn-ghost btn-block btn-sm" style="margin-top: 12px;" onclick="navigate('shop')">ادامه خرید</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-wishlist">
+  <div class="container">
+    <div style="padding: 48px 0 24px;">
+      <h1 class="font-display text-5xl">علاقه‌مندی‌های من</h1>
+      <p style="color: var(--text-muted); margin-top: 8px;">موارد ذخیره شده شما</p>
+    </div>
+    <div class="product-grid wishlist-grid" id="wishlist-products"></div>
+    <div id="wishlist-empty" style="display:none; text-align: center; padding: 80px 24px;">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin: 0 auto 24px; opacity: 0.3;"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      <h2 class="font-display text-2xl" style="margin-bottom: 16px;">لیست علاقه‌مندی شما خالی است</h2>
+      <p style="color: var(--text-muted); margin-bottom: 32px;">محصولات مورد علاقه خود را برای بعد ذخیره کنید.</p>
+      <button class="btn btn-primary" onclick="navigate('shop')">کشف محصولات</button>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-checkout">
+  <div class="container">
+    <div style="padding: 48px 0 24px;">
+      <h1 class="font-display text-5xl">تکمیل خرید</h1>
+    </div>
+    <div class="checkout-layout">
+      <div>
+        <div class="checkout-section">
+          <h2>اطلاعات تماس</h2>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label">ایمیل</label><input type="email" class="form-input" value="sophia@example.com" /></div>
+            <div class="form-group"><label class="form-label">شماره تماس</label><input type="tel" class="form-input" value="۰۹۱۲۳۴۵۶۷۸۹" /></div>
+          </div>
+        </div>
+        <div class="checkout-section">
+          <h2>آدرس ارسال</h2>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label">نام</label><input type="text" class="form-input" value="سارا" /></div>
+            <div class="form-group"><label class="form-label">نام خانوادگی</label><input type="text" class="form-input" value="احمدی" /></div>
+            <div class="form-group full"><label class="form-label">آدرس</label><input type="text" class="form-input" value="خیابان ولیعصر، پلاک ۱۲۳" /></div>
+            <div class="form-group"><label class="form-label">شهر</label><input type="text" class="form-input" value="تهران" /></div>
+            <div class="form-group"><label class="form-label">استان</label><input type="text" class="form-input" value="تهران" /></div>
+            <div class="form-group"><label class="form-label">کد پستی</label><input type="text" class="form-input" value="۱۴۱۶۸۷۵۳۲۱" /></div>
+            <div class="form-group"><label class="form-label">کشور</label><input type="text" class="form-input" value="ایران" /></div>
+          </div>
+        </div>
+        <div class="checkout-section">
+          <h2>روش پرداخت</h2>
+          <div class="payment-methods">
+            <label class="payment-method active">
+              <input type="radio" name="payment" checked />
+              <div>
+                <div style="font-weight: 600;">کارت بانکی</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">درگاه پرداخت امن</div>
+              </div>
+            </label>
+            <label class="payment-method">
+              <input type="radio" name="payment" />
+              <div>
+                <div style="font-weight: 600;">کیف پول دیجیتال</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">پرداخت سریع و امن</div>
+              </div>
+            </label>
+            <label class="payment-method">
+              <input type="radio" name="payment" />
+              <div>
+                <div style="font-weight: 600;">پرداخت در محل</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">پرداخت هنگام تحویل</div>
+              </div>
+            </label>
+          </div>
+          <div style="margin-top: 20px;">
+            <div class="form-group"><label class="form-label">شماره کارت</label><input type="text" class="form-input" placeholder="۶۰۳۷ ۹۹۷۵ ۷۰۱۲ ۳۴۵۶" /></div>
+            <div class="form-grid">
+              <div class="form-group"><label class="form-label">تاریخ انقضا</label><input type="text" class="form-input" placeholder="۱۲/۰۵" /></div>
+              <div class="form-group"><label class="form-label">CVV2</label><input type="text" class="form-input" placeholder="۱۲۳" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="cart-summary">
+          <h2>خلاصه سفارش</h2>
+          <div id="checkout-items" style="margin-bottom: 20px;"></div>
+          <div class="summary-row"><span>جمع کل</span><span id="checkout-subtotal">۰ تومان</span></div>
+          <div class="summary-row"><span>هزینه ارسال</span><span>۱۲۰,۰۰۰ تومان</span></div>
+          <div class="summary-row"><span>مالیات</span><span id="checkout-tax">۰ تومان</span></div>
+          <div class="summary-row total"><span>مبلغ نهایی</span><span id="checkout-total">۰ تومان</span></div>
+          <button class="btn btn-primary btn-block" style="margin-top: 24px;" onclick="placeOrder()">ثبت سفارش</button>
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 16px;">🔒 پرداخت کاملاً امن و رمزنگاری شده</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-account">
+  <div class="container">
+    <div style="padding: 48px 0 24px;">
+      <h1 class="font-display text-5xl">حساب کاربری من</h1>
+    </div>
+    <div class="account-layout">
+      <aside class="account-nav">
+        <div class="account-nav-item active" onclick="switchAccountTab(this, 'profile')">پروفایل</div>
+        <div class="account-nav-item" onclick="switchAccountTab(this, 'orders')">سفارش‌ها</div>
+        <div class="account-nav-item" onclick="switchAccountTab(this, 'tracking')">پیگیری سفارش</div>
+        <div class="account-nav-item" onclick="switchAccountTab(this, 'addresses')">آدرس‌ها</div>
+        <div class="account-nav-item" onclick="switchAccountTab(this, 'settings')">تنظیمات</div>
+        <div class="account-nav-item" onclick="openAuthModal()" style="color: var(--accent);">ورود</div>
+      </aside>
+      <div class="account-content" id="account-content">
+        <h2 class="font-display text-2xl" style="margin-bottom: 24px;">اطلاعات پروفایل</h2>
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label">نام</label><input type="text" class="form-input" value="سارا" /></div>
+          <div class="form-group"><label class="form-label">نام خانوادگی</label><input type="text" class="form-input" value="احمدی" /></div>
+          <div class="form-group full"><label class="form-label">ایمیل</label><input type="email" class="form-input" value="sophia@example.com" /></div>
+          <div class="form-group full"><label class="form-label">تلفن</label><input type="tel" class="form-input" value="۰۹۱۲۳۴۵۶۷۸۹" /></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 16px;">ذخیره تغییرات</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-blog">
+  <div class="container">
+    <div style="padding: 64px 0 24px; text-align: center;">
+      <div class="section-eyebrow">مجله لوکس</div>
+      <h1 class="font-display text-5xl" style="margin-bottom: 16px;">زیبایی و سبک زندگی</h1>
+      <p class="section-subtitle">نکات تخصصی، ترندها و داستان‌هایی از دنیای زیبایی لوکس.</p>
+    </div>
+    <div class="blog-grid" id="blog-grid"></div>
+  </div>
+</main>
+
+<main class="page" id="page-contact">
+  <div class="container">
+    <div style="padding: 64px 0 24px; text-align: center;">
+      <div class="section-eyebrow">در تماس باشید</div>
+      <h1 class="font-display text-5xl" style="margin-bottom: 16px;">خوشحال می‌شویم از شما بشنویم</h1>
+      <p class="section-subtitle">مشاوران زیبایی ما آماده پاسخگویی به هر سوالی هستند.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h2>اطلاعات تماس</h2>
+        <p>از طریق هر یک از راه‌های زیر با ما در تماس باشید. معمولاً ظرف ۲۴ ساعت پاسخ می‌دهیم.</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>آدرس ما</h4><p>تهران، خیابان ولیعصر، پلاک ۱۲۳</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><h4>ایمیل</h4><p>hello@luxe-beauty.ir</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><h4>تلفن</h4><p>۰۲۱-۸۸۷۷۶۶۵۵</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h4>ساعات کاری</h4><p>شنبه تا چهارشنبه: ۹ تا ۱۹ · پنجشنبه و جمعه: ۱۰ تا ۱۸</p></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <div class="form-group"><label class="form-label">نام</label><input type="text" class="form-input" required /></div>
+        <div class="form-group"><label class="form-label">ایمیل</label><input type="email" class="form-input" required /></div>
+        <div class="form-group"><label class="form-label">موضوع</label><input type="text" class="form-input" required /></div>
+        <div class="form-group"><label class="form-label">پیام</label><textarea class="form-input" rows="5" required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block">ارسال پیام</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<main class="page" id="page-admin">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h3>پنل مدیریت</h3>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">خوش آمدید، مدیر</div>
+      </div>
+      <div class="admin-nav">
+        <div class="admin-nav-item active" onclick="switchAdminTab(this, 'dashboard')">📊 داشبورد</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'products')">🛍️ محصولات</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'orders')">📦 سفارش‌ها</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'customers')">👥 مشتریان</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'analytics')">📈 تحلیل‌ها</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'inventory')">🏷️ موجودی</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'cms')">📝 مدیریت محتوا</div>
+        <div class="admin-nav-item" onclick="switchAdminTab(this, 'settings')">⚙️ تنظیمات</div>
+      </div>
+    </aside>
+    <div class="admin-content" id="admin-content"></div>
+  </div>
+</main>
+
+<div class="modal-overlay" id="auth-modal">
+  <div class="modal">
+    <button class="modal-close icon-btn" onclick="closeAuthModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h2>به لوکس خوش آمدید</h2>
+    <p class="modal-subtitle">برای دسترسی به حساب کاربری و پیشنهادهای ویژه وارد شوید.</p>
+    <div class="auth-tabs">
+      <div class="auth-tab active" onclick="switchAuthTab(this, 'login')">ورود</div>
+      <div class="auth-tab" onclick="switchAuthTab(this, 'register')">ثبت‌نام</div>
+    </div>
+    <form id="auth-form" onsubmit="handleAuth(event)">
+      <div id="auth-register-name" style="display: none;">
+        <div class="form-group"><label class="form-label">نام کامل</label><input type="text" class="form-input" /></div>
+      </div>
+      <div class="form-group"><label class="form-label">ایمیل</label><input type="email" class="form-input" required /></div>
+      <div class="form-group"><label class="form-label">رمز عبور</label><input type="password" class="form-input" required /></div>
+      <button type="submit" class="btn btn-primary btn-block" id="auth-submit">ورود</button>
+    </form>
+    <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+      با ادامه، شما با شرایط و حریم خصوصی ما موافقت می‌کنید.
+    </p>
+  </div>
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">لوکس<span>.</span></div>
+        <p class="footer-desc">لوازم آرایشی لوکس و محصولات زیبایی ممتاز، منتخب برای کسانی که قدر زیبایی بی‌نظیر را می‌دانند.</p>
+        <div class="footer-social">
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.023c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg></a>
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">فروشگاه</div>
+        <ul class="footer-links">
+          <li><a onclick="navigate('shop')">همه محصولات</a></li>
+          <li><a onclick="filterCategory('لب')">لب</a></li>
+          <li><a onclick="filterCategory('صورت')">صورت</a></li>
+          <li><a onclick="filterCategory('چشم')">چشم</a></li>
+          <li><a onclick="filterCategory('عطر')">عطر</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">راهنما</div>
+        <ul class="footer-links">
+          <li><a onclick="navigate('contact')">تماس با ما</a></li>
+          <li><a>اطلاعات ارسال</a></li>
+          <li><a>بازگشت کالا</a></li>
+          <li><a>سوالات متداول</a></li>
+          <li><a>پیگیری سفارش</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">شرکت</div>
+        <ul class="footer-links">
+          <li><a onclick="navigate('blog')">مجله</a></li>
+          <li><a>درباره لوکس</a></li>
+          <li><a>فرصت‌های شغلی</a></li>
+          <li><a>اخبار</a></li>
+          <li><a>حریم خصوصی</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© ۱۴۰۵ لوکس بیوتی. تمامی حقوق محفوظ است.</div>
+      <div>طراحی شده با ♥ برای علاقه‌مندان به زیبایی</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== تبدیل اعداد به فارسی ===== */
+function toPersianNum(num) {
+  const persian = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+  return String(num).replace(/\d/g, d => persian[d]);
+}
+function formatPrice(price) {
+  return toPersianNum(Math.round(price).toLocaleString('en-US')) + ' تومان';
+}
+
+/* ===== DATA ===== */
+const PRODUCTS = [
+  { id: 1, name: 'رژ لب مات مخملی', brand: 'لوکس', category: 'لب', price: 460000, originalPrice: 460000, rating: 4.8, reviews: 128, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1cda15bc1-a9b5-4eb2-b16d-a7e70a3d98d2.png', description: 'رژ لب مات لوکس با ماندگاری بالا که به نرمی روی لب می‌لغزد و رنگی غنی ارائه می‌دهد. غنی شده با ویتامین E و روغن جوجوبا برای راحتی در تمام طول روز.', shades: ['#8B2635', '#C44536', '#B76E79', '#D4878F', '#8B4513'], sizes: ['۳.۵ گرم', 'سایز کامل'], sku: 'LUX-LIP-001', featured: true, flash: true, flashPrice: 280000 },
+  { id: 2, name: 'پالت سایه چشم ساعت طلایی', brand: 'لوکس', category: 'چشم', price: 680000, originalPrice: 680000, rating: 4.9, reviews: 256, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/102634018-d5a5-471a-a858-afd4addda487.png', description: 'مجموعه‌ای منتخب از ۱۲ رنگ با رنگدانه‌های قوی در جلوه‌های مات و درخشان. قابل ترکیب و لایه‌ای، طراحی شده برای آرایش چشم از روز تا شب.', shades: ['#E5C48A', '#B76E79', '#8B4513', '#2D1B2E'], sizes: ['۱۲ رنگ'], sku: 'LUX-EYE-002', featured: true },
+  { id: 3, name: 'عطر اکسیر گل رز', brand: 'لوکس', category: 'عطر', price: 1500000, originalPrice: 1500000, rating: 4.7, reviews: 89, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/139b66fad-5782-4727-a60a-11a9b7b9ca04.png', description: 'ترکیبی فریبنده از گل رز بلغاری، یاس و عنبر گرم. عطری شیک که به زیبایی در طول روز باقی می‌ماند.', shades: [], sizes: ['۳۰ میلی‌لیتر', '۵۰ میلی‌لیتر', '۱۰۰ میلی‌لیتر'], sku: 'LUX-FRG-003', featured: true, flash: true, flashPrice: 1050000 },
+  { id: 4, name: 'کرم پودر ابریشمی', brand: 'لوکس', category: 'صورت', price: 580000, originalPrice: 580000, rating: 4.6, reviews: 342, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/14f7bdc60-0fb9-454c-9a43-a75b9cef1151.png', description: 'کرم پودر سبک و قابل لایه‌ای که پوشش متوسط تا کامل با جلوه‌ای طبیعی و شبیه پوست ارائه می‌دهد. غنی شده با هیالورونیک اسید برای آبرسانی ۲۴ ساعته.', shades: ['#F5DEB3', '#DEB887', '#D2B48C', '#C19A6B', '#8B7355'], sizes: ['۳۰ میلی‌لیتر'], sku: 'LUX-FCE-004', featured: true },
+  { id: 5, name: 'سرم طلای ۲۴ عیار', brand: 'لوکس', category: 'مراقبت پوست', price: 1250000, originalPrice: 1250000, rating: 4.9, reviews: 178, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1c0dab8da-097d-40cd-922d-5e46a2897e08.png', description: 'سرم لوکس ضد پیری غنی شده با ذرات طلای ۲۴ عیار، ویتامین C و رتینول. خطوط ریز را به وضوح کاهش می‌دهد و درخشندگی را بازمی‌گرداند.', shades: [], sizes: ['۳۰ میلی‌لیتر', '۵۰ میلی‌لیتر'], sku: 'LUX-SKN-005', featured: true },
+  { id: 6, name: 'کرم بدن گلبرگ رز', brand: 'لوکس', category: 'بدن', price: 720000, originalPrice: 720000, rating: 4.8, reviews: 203, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1d8313c34-f84e-443a-bd48-14f53e3ed0e7.png', description: 'کرم بدن غنی و مغذی غنی شده با گلبرگ‌های واقعی رز و کره شی. پوست را نرم و ابریشمی می‌کند با رایحه‌ای ظریف گلی.', shades: [], sizes: ['۲۰۰ میلی‌لیتر', '۴۰۰ میلی‌لیتر'], sku: 'LUX-BDY-006', featured: true },
+  { id: 7, name: 'ریمل لاو کوتور', brand: 'لوکس', category: 'چشم', price: 380000, originalPrice: 380000, rating: 4.7, reviews: 412, image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1cda15bc1-a9b5-4eb2-b16d-a7e70a3d98d2.png', description: 'ریمل حجم‌دهنده و بلندکننده با طراحی براش منحصر به فرد که هر مژه را جدا و مشخص می‌کند. فرمول ضد لک و ضد آب.', shades: ['#000000', '#2D1B2E'], sizes: ['۱۰ میلی‌لیتر'], sku: 'LUX-EYE-007', featured: false }
+];
+
+const BLOG_POSTS = [
+  { title: 'هنر رژ لب قرمز بی‌نقص', category: 'نکات آرایش', excerpt: 'رازهای انتخاب و استفاده از رژ لب قرمز بی‌نقص برای هر رنگ پوست و مناسبتی را کشف کنید.', date: '۱۲ تیر ۱۴۰۵', readTime: '۵ دقیقه مطالعه', image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1cda15bc1-a9b5-4eb2-b16d-a7e70a3d98d2.png' },
+  { title: 'ضروریات مراقبت از پوست در تابستان', category: 'مراقبت پوست', excerpt: 'پوست خود را در تابستان با راهنمای منتخب ما از بهترین محصولات سبک و دارای SPF محافظت و تغذیه کنید.', date: '۷ تیر ۱۴۰۵', readTime: '۷ دقیقه مطالعه', image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1c0dab8da-097d-40cd-922d-5e46a2897e08.png' },
+  { title: 'لایه‌بندی عطر ۱۰۱', category: 'عطر', excerpt: 'هنر لایه‌بندی عطر را برای ایجاد رایحه امضای شخصی خود که تمام روز باقی می‌ماند، یاد بگیرید.', date: '۳۰ خرداد ۱۴۰۵', readTime: '۶ دقیقه مطالعه', image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/139b66fad-5782-4727-a60a-11a9b7b9ca04.png' },
+  { title: 'پشت صحنه: کالکشن جدید ما', category: 'داستان برند', excerpt: 'نگاهی اختصاصی به الهام و هنرمندی پشت آخرین کالکشن لوکس ما بیندازید.', date: '۲۵ خرداد ۱۴۰۵', readTime: '۸ دقیقه مطالعه', image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1088a60e7-dfd4-4f77-869a-5e6a730a3333.png' },
+  { title: 'راهنمای جامع آرایش چشم', category: 'آموزش', excerpt: 'از ظاهر ظریف روزانه تا درام شبانه — هر تکنیک آرایش چشم را یاد بگیرید.', date: '۲۰ خرداد ۱۴۰۵', readTime: '۱۰ دقیقه مطالعه', image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/102634018-d5a5-471a-a858-afd4addda487.png' },
+  { title: 'زیبایی پاک: آنچه باید بدانید', category: 'آموزش', excerpt: 'با راهنمای جامع ما از مواد تشکیل‌دهنده و گواهینامه‌ها، در دنیای زیبایی پاک حرکت کنید.', date: '۱۵ خرداد ۱۴۰۵', readTime: '۹ دقیقه مطالعه', image: 'https://image.qwenlm.ai/public_source/273e43d0-e205-47b8-8075-edba994cbaaf/1d8313c34-f84e-443a-bd48-14f53e3ed0e7.png' }
+];
+
+const REVIEWS = [
+  { author: 'سارا م.', rating: 5, date: '۲ روز پیش', text: 'کاملاً عاشق این محصول شدم! کیفیت بی‌نظیر است و تمام روز دوام می‌آورد. ارزش هر ریالش را دارد.' },
+  { author: 'ژاله ل.', rating: 5, date: '۱ هفته پیش', text: 'این محصول به یکی از اجزای اصلی روتین من تبدیل شده است. بسته‌بندی زیبا و فرمول بی‌نقص است.' },
+  { author: 'آمنه ک.', rating: 4, date: '۲ هفته پیش', text: 'محصول عالی به طور کلی. رنگ زیبا و حس لوکس دارد. کمی گران است اما ارزشش را دارد.' },
+  { author: 'رها ت.', rating: 5, date: '۳ هفته پیش', text: 'محصولات مشابه زیادی را امتحان کرده‌ام و این به مراتب بهترین است. به شدت توصیه می‌کنم!' }
+];
+
+/* ===== STATE ===== */
+const state = {
+  cart: JSON.parse(localStorage.getItem('luxe_cart_fa') || '[]'),
+  wishlist: JSON.parse(localStorage.getItem('luxe_wishlist_fa') || '[]'),
+  theme: localStorage.getItem('luxe_theme_fa') || 'light',
+  currentProduct: null,
+  quantity: 1,
+  selectedShade: 0,
+  selectedSize: 0,
+  coupon: null,
+  currentPage: 'home',
+  filters: { category: null, minPrice: 0, maxPrice: 2000000, rating: 0, search: '', sort: 'featured' }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme();
+  renderFeatured();
+  renderShop();
+  renderBlog();
+  renderCategoryFilters();
+  updateBadges();
+  startCountdown();
+  renderAdminDashboard();
+});
+
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', state.theme);
+  const icon = document.getElementById('theme-icon');
+  if (state.theme === 'dark') {
+    icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+  } else {
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+  }
+}
+function toggleTheme() {
+  state.theme = state.theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('luxe_theme_fa', state.theme);
+  applyTheme();
+}
+
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const link = document.querySelector(`.nav-link[data-page="${page}"]`);
+  if (link) link.classList.add('active');
+  state.currentPage = page;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (page === 'cart') renderCart();
+  if (page === 'wishlist') renderWishlist();
+  if (page === 'checkout') renderCheckout();
+  if (page === 'shop') renderShop();
+}
+
+function toggleMobileMenu() {
+  document.getElementById('mobile-menu').classList.toggle('active');
+}
+
+function createProductCard(p) {
+  const inWishlist = state.wishlist.includes(p.id);
+  const price = p.flash ? p.flashPrice : p.price;
+  const discount = p.originalPrice > price ? Math.round((1 - price / p.originalPrice) * 100) : 0;
+  return `
+    <div class="product-card" onclick="viewProduct(${p.id})">
+      <div class="product-image">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" />
+        ${p.flash ? `<div class="product-tag flash">${toPersianNum(discount)}٪-</div>` : ''}
+        <button class="product-wishlist ${inWishlist ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${p.id})">
+          <svg viewBox="0 0 24 24" fill="${inWishlist ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <div class="product-quick-add" onclick="event.stopPropagation(); quickAdd(${p.id})">افزودن سریع +</div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-rating">
+          <span class="stars">${'★'.repeat(Math.floor(p.rating))}</span>
+          <span>(${toPersianNum(p.reviews)})</span>
+        </div>
+        <div class="product-price">
+          <span class="price-current">${formatPrice(price)}</span>
+          ${discount > 0 ? `<span class="price-original">${formatPrice(p.originalPrice)}</span><span class="price-discount">${toPersianNum(discount)}٪-</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderFeatured() {
+  const featured = PRODUCTS.filter(p => p.featured).slice(0, 4);
+  document.getElementById('featured-products').innerHTML = featured.map(createProductCard).join('');
+}
+
+function renderShop() {
+  let filtered = [...PRODUCTS];
+  const f = state.filters;
+  if (f.category) filtered = filtered.filter(p => p.category === f.category);
+  if (f.search) {
+    const s = f.search.toLowerCase();
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(s) || p.brand.toLowerCase().includes(s) || p.category.toLowerCase().includes(s));
+  }
+  filtered = filtered.filter(p => p.price >= f.minPrice && p.price <= f.maxPrice);
+  if (f.rating > 0) filtered = filtered.filter(p => p.rating >= f.rating);
+  if (f.sort === 'price-low') filtered.sort((a, b) => a.price - b.price);
+  if (f.sort === 'price-high') filtered.sort((a, b) => b.price - a.price);
+  if (f.sort === 'rating') filtered.sort((a, b) => b.rating - a.rating);
+  if (f.sort === 'newest') filtered.sort((a, b) => b.id - a.id);
+  document.getElementById('shop-products').innerHTML = filtered.length ? filtered.map(createProductCard).join('') : '<p style="grid-column: 1/-1; text-align: center; padding: 80px 24px; color: var(--text-muted);">هیچ محصولی با معیارهای شما مطابقت ندارد.</p>';
+  document.getElementById('shop-count').textContent = `نمایش ${toPersianNum(filtered.length)} محصول`;
+}
+
+function renderCategoryFilters() {
+  const categories = [...new Set(PRODUCTS.map(p => p.category))];
+  document.getElementById('category-filters').innerHTML = categories.map(c => `
+    <label class="filter-option">
+      <input type="checkbox" value="${c}" onchange="toggleCategory('${c}')" ${state.filters.category === c ? 'checked' : ''} />
+      ${c}
+    </label>
+  `).join('');
+}
+
+function toggleCategory(cat) {
+  state.filters.category = state.filters.category === cat ? null : cat;
+  document.querySelectorAll('#category-filters input').forEach(i => i.checked = (i.value === state.filters.category));
+  renderShop();
+}
+
+function filterCategory(cat) {
+  state.filters.category = cat;
+  navigate('shop');
+  renderCategoryFilters();
+  renderShop();
+}
+
+function handleSearch(val) {
+  state.filters.search = val;
+  renderShop();
+}
+
+function applyFilters() {
+  state.filters.minPrice = parseFloat(document.getElementById('price-min').value) || 0;
+  state.filters.maxPrice = parseFloat(document.getElementById('price-max').value) || 2000000;
+  const ratingEl = document.querySelector('input[name="rating"]:checked');
+  state.filters.rating = ratingEl ? parseFloat(ratingEl.value) : 0;
+  state.filters.sort = document.getElementById('shop-sort').value;
+  renderShop();
+}
+
+function resetFilters() {
+  state.filters = { category: null, minPrice: 0, maxPrice: 2000000, rating: 0, search: '', sort: 'featured' };
+  document.getElementById('search-input').value = '';
+  document.getElementById('price-min').value = 0;
+  document.getElementById('price-max').value = 2000000;
+  document.querySelector('input[name="rating"][value="0"]').checked = true;
+  document.getElementById('shop-sort').value = 'featured';
+  renderCategoryFilters();
+  renderShop();
+}
+
+function viewProduct(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  state.currentProduct = p;
+  state.quantity = 1;
+  state.selectedShade = 0;
+  state.selectedSize = 0;
+  document.getElementById('pd-main-image').src = p.image;
+  document.getElementById('pd-brand').textContent = p.brand;
+  document.getElementById('pd-name').textContent = p.name;
+  document.getElementById('pd-stars').textContent = '★'.repeat(Math.floor(p.rating));
+  document.getElementById('pd-rating-text').textContent = `${toPersianNum(p.rating)} · ${toPersianNum(p.reviews)} نظر`;
+  const price = p.flash ? p.flashPrice : p.price;
+  document.getElementById('pd-price').textContent = formatPrice(price);
+  document.getElementById('pd-original').textContent = p.originalPrice > price ? formatPrice(p.originalPrice) : '';
+  const disc = p.originalPrice > price ? '-' + Math.round((1 - price / p.originalPrice) * 100) + '٪' : '';
+  document.getElementById('pd-discount').textContent = disc;
+  document.getElementById('pd-desc').textContent = p.description;
+  document.getElementById('pd-sku').textContent = p.sku;
+  document.getElementById('pd-cat').textContent = p.category;
+  document.getElementById('pd-qty').textContent = toPersianNum(1);
+  document.getElementById('pd-shades').innerHTML = p.shades.length ? p.shades.map((s, i) => `<div class="shade ${i === 0 ? 'active' : ''}" style="background:${s}" onclick="selectShade(${i})"></div>`).join('') : '<span style="color: var(--text-muted); font-size: 0.9rem;">یک سایز</span>';
+  document.getElementById('pd-sizes').innerHTML = p.sizes.map((s, i) => `<button class="size-btn ${i === 0 ? 'active' : ''}" onclick="selectSize(${i})">${s}</button>`).join('');
+  document.getElementById('pd-thumbnails').innerHTML = [p.image, p.image, p.image, p.image].map((img, i) => `<div class="product-thumbnail ${i === 0 ? 'active' : ''}" onclick="selectThumbnail(this, '${img}')"><img src="${img}" /></div>`).join('');
+  document.getElementById('reviews-list').innerHTML = REVIEWS.map(r => `
+    <div class="review-card">
+      <div class="review-header">
+        <div><span class="review-author">${r.author}</span> <span class="stars" style="margin-right: 8px;">${'★'.repeat(r.rating)}</span></div>
+        <div class="review-date">${r.date}</div>
+      </div>
+      <p class="review-text">${r.text}</p>
+    </div>
+  `).join('');
+  const recs = PRODUCTS.filter(x => x.id !== p.id).slice(0, 4);
+  document.getElementById('recommended-products').innerHTML = recs.map(createProductCard).join('');
+  navigate('product');
+}
+
+function selectShade(i) {
+  state.selectedShade = i;
+  document.querySelectorAll('#pd-shades .shade').forEach((el, idx) => el.classList.toggle('active', idx === i));
+}
+function selectSize(i) {
+  state.selectedSize = i;
+  document.querySelectorAll('#pd-sizes .size-btn').forEach((el, idx) => el.classList.toggle('active', idx === i));
+}
+function selectThumbnail(el, src) {
+  document.querySelectorAll('.product-thumbnail').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('pd-main-image').src = src;
+}
+function changeQty(delta) {
+  state.quantity = Math.max(1, Math.min(10, state.quantity + delta));
+  document.getElementById('pd-qty').textContent = toPersianNum(state.quantity);
+}
+
+function addToCartFromDetail() {
+  if (!state.currentProduct) return;
+  addToCart(state.currentProduct.id, state.quantity);
+}
+
+function toggleWishlistFromDetail() {
+  if (!state.currentProduct) return;
+  toggleWishlist(state.currentProduct.id);
+}
+
+function addToCart(id, qty = 1) {
+  const existing = state.cart.find(i => i.id === id);
+  if (existing) existing.qty += qty;
+  else state.cart.push({ id, qty });
+  saveCart();
+  updateBadges();
+  showToast('به سبد خرید اضافه شد', 'success');
+}
+
+function quickAdd(id) { addToCart(id, 1); }
+
+function removeFromCart(id) {
+  state.cart = state.cart.filter(i => i.id !== id);
+  saveCart();
+  renderCart();
+  updateBadges();
+  showToast('از سبد حذف شد', 'success');
+}
+
+function updateCartQty(id, delta) {
+  const item = state.cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty = Math.max(1, item.qty + delta);
+  saveCart();
+  renderCart();
+  updateBadges();
+}
+
+function saveCart() { localStorage.setItem('luxe_cart_fa', JSON.stringify(state.cart)); }
+
+function renderCart() {
+  const container = document.getElementById('cart-items');
+  const empty = document.getElementById('cart-empty');
+  if (state.cart.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    document.getElementById('cart-count-text').textContent = '۰ کالا در سبد شما';
+    updateCartTotals(0);
+    return;
+  }
+  empty.style.display = 'none';
+  let subtotal = 0;
+  container.innerHTML = state.cart.map(item => {
+    const p = PRODUCTS.find(x => x.id === item.id);
+    if (!p) return '';
+    const price = p.flash ? p.flashPrice : p.price;
+    subtotal += price * item.qty;
+    return `
+      <div class="cart-item">
+        <div class="cart-item-image"><img src="${p.image}" /></div>
+        <div class="cart-item-info">
+          <div class="product-brand">${p.brand}</div>
+          <h3>${p.name}</h3>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">${p.category} · ${p.sizes[state.selectedSize] || p.sizes[0]}</div>
+          <div class="quantity-selector" style="margin-top: 12px;">
+            <button class="quantity-btn" onclick="updateCartQty(${p.id}, -1)">−</button>
+            <div class="quantity-value">${toPersianNum(item.qty)}</div>
+            <button class="quantity-btn" onclick="updateCartQty(${p.id}, 1)">+</button>
+          </div>
+          <button class="cart-item-remove" onclick="removeFromCart(${p.id})">حذف</button>
+        </div>
+        <div class="cart-item-price">${formatPrice(price * item.qty)}</div>
+      </div>`;
+  }).join('');
+  const totalItems = state.cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('cart-count-text').textContent = `${toPersianNum(totalItems)} کالا در سبد شما`;
+  updateCartTotals(subtotal);
+}
+
+function updateCartTotals(subtotal) {
+  const shipping = subtotal > 500000 ? 0 : 120000;
+  const discount = state.coupon === 'LUXE20' ? subtotal * 0.2 : (state.coupon === 'SAVE10' ? 100000 : 0);
+  const afterDiscount = Math.max(0, subtotal - discount);
+  const tax = afterDiscount * 0.09;
+  const total = afterDiscount + shipping + tax;
+  document.getElementById('cart-subtotal').textContent = formatPrice(subtotal);
+  document.getElementById('cart-shipping').textContent = shipping === 0 ? 'رایگان' : formatPrice(shipping);
+  document.getElementById('cart-tax').textContent = formatPrice(tax);
+  document.getElementById('cart-total').textContent = formatPrice(total);
+  const discRow = document.getElementById('discount-row');
+  if (discount > 0) {
+    discRow.style.display = 'flex';
+    document.getElementById('cart-discount').textContent = '-' + formatPrice(discount);
+  } else discRow.style.display = 'none';
+}
+
+function applyCoupon() {
+  const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+  const msg = document.getElementById('coupon-message');
+  if (code === 'LUXE20') {
+    state.coupon = code;
+    msg.textContent = '✓ تخفیف ۲۰٪ اعمال شد!';
+    msg.style.color = 'var(--success)';
+    showToast('کد تخفیف اعمال شد: ۲۰٪ تخفیف', 'success');
+  } else if (code === 'SAVE10') {
+    state.coupon = code;
+    msg.textContent = '✓ تخفیف ۱۰۰,۰۰۰ تومانی اعمال شد!';
+    msg.style.color = 'var(--success)';
+    showToast('کد تخفیف اعمال شد: ۱۰۰ هزار تومان تخفیف', 'success');
+  } else {
+    state.coupon = null;
+    msg.textContent = '✗ کد تخفیف نامعتبر است';
+    msg.style.color = 'var(--danger)';
+    showToast('کد تخفیف نامعتبر', 'error');
+  }
+  renderCart();
+}
+
+function toggleWishlist(id) {
+  const idx = state.wishlist.indexOf(id);
+  if (idx > -1) {
+    state.wishlist.splice(idx, 1);
+    showToast('از علاقه‌مندی‌ها حذف شد', 'success');
+  } else {
+    state.wishlist.push(id);
+    showToast('به علاقه‌مندی‌ها اضافه شد', 'success');
+  }
+  localStorage.setItem('luxe_wishlist_fa', JSON.stringify(state.wishlist));
+  updateBadges();
+  renderFeatured();
+  renderShop();
+  if (state.currentPage === 'wishlist') renderWishlist();
+}
+
+function renderWishlist() {
+  const container = document.getElementById('wishlist-products');
+  const empty = document.getElementById('wishlist-empty');
+  if (state.wishlist.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  const items = state.wishlist.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+  container.innerHTML = items.map(createProductCard).join('');
+}
+
+function updateBadges() {
+  document.getElementById('cart-badge').textContent = toPersianNum(state.cart.reduce((s, i) => s + i.qty, 0));
+  document.getElementById('wishlist-badge').textContent = toPersianNum(state.wishlist.length);
+}
+
+function renderCheckout() {
+  let subtotal = 0;
+  document.getElementById('checkout-items').innerHTML = state.cart.map(item => {
+    const p = PRODUCTS.find(x => x.id === item.id);
+    if (!p) return '';
+    const price = p.flash ? p.flashPrice : p.price;
+    subtotal += price * item.qty;
+    return `<div style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+      <img src="${p.image}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" />
+      <div style="flex: 1;">
+        <div style="font-weight: 600; font-size: 0.9rem;">${p.name}</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">تعداد: ${toPersianNum(item.qty)}</div>
+      </div>
+      <div style="font-weight: 600;">${formatPrice(price * item.qty)}</div>
+    </div>`;
+  }).join('');
+  const shipping = 120000;
+  const tax = subtotal * 0.09;
+  const total = subtotal + shipping + tax;
+  document.getElementById('checkout-subtotal').textContent = formatPrice(subtotal);
+  document.getElementById('checkout-tax').textContent = formatPrice(tax);
+  document.getElementById('checkout-total').textContent = formatPrice(total);
+}
+
+function placeOrder() {
+  if (state.cart.length === 0) { showToast('سبد خرید شما خالی است', 'error'); return; }
+  showToast('سفارش با موفقیت ثبت شد! 🎉', 'success');
+  state.cart = [];
+  saveCart();
+  updateBadges();
+  setTimeout(() => navigate('account'), 1500);
+}
+
+function renderBlog() {
+  document.getElementById('blog-grid').innerHTML = BLOG_POSTS.map(b => `
+    <article class="blog-card">
+      <div class="blog-image"><img src="${b.image}" alt="${b.title}" loading="lazy" /></div>
+      <div class="blog-content">
+        <div class="blog-category">${b.category}</div>
+        <h3 class="blog-title">${b.title}</h3>
+        <p class="blog-excerpt">${b.excerpt}</p>
+        <div class="blog-meta"><span>${b.date}</span><span>·</span><span>${b.readTime}</span></div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function switchAccountTab(el, tab) {
+  document.querySelectorAll('.account-nav-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+  const content = document.getElementById('account-content');
+  if (tab === 'profile') {
+    content.innerHTML = `<h2 class="font-display text-2xl" style="margin-bottom: 24px;">اطلاعات پروفایل</h2>
+      <div class="form-grid">
+        <div class="form-group"><label class="form-label">نام</label><input type="text" class="form-input" value="سارا" /></div>
+        <div class="form-group"><label class="form-label">نام خانوادگی</label><input type="text" class="form-input" value="احمدی" /></div>
+        <div class="form-group full"><label class="form-label">ایمیل</label><input type="email" class="form-input" value="sophia@example.com" /></div>
+        <div class="form-group full"><label class="form-label">تلفن</label><input type="tel" class="form-input" value="۰۹۱۲۳۴۵۶۷۸۹" /></div>
+      </div>
+      <button class="btn btn-primary" style="margin-top: 16px;">ذخیره تغییرات</button>`;
+  } else if (tab === 'orders') {
+    content.innerHTML = `<h2 class="font-display text-2xl" style="margin-bottom: 24px;">سفارش‌های من</h2>
+      <table class="admin-table">
+        <thead><tr><th>شماره سفارش</th><th>تاریخ</th><th>وضعیت</th><th>مبلغ</th><th>عملیات</th></tr></thead>
+        <tbody>
+          <tr><td>ش-۲۸۴۷</td><td>۱۲ تیر ۱۴۰۵</td><td><span class="status-badge success">تحویل شده</span></td><td>۱,۸۶۰,۰۰۰ تومان</td><td><button class="btn btn-ghost btn-sm">مشاهده</button></td></tr>
+          <tr><td>ش-۲۸۳۱</td><td>۷ تیر ۱۴۰۵</td><td><span class="status-badge warning">ارسال شده</span></td><td>۹۴۵,۰۰۰ تومان</td><td><button class="btn btn-ghost btn-sm">پیگیری</button></td></tr>
+          <tr><td>ش-۲۸۰۲</td><td>۲۵ خرداد ۱۴۰۵</td><td><span class="status-badge success">تحویل شده</span></td><td>۲,۴۸۰,۰۰۰ تومان</td><td><button class="btn btn-ghost btn-sm">مشاهده</button></td></tr>
+        </tbody>
+      </table>`;
+  } else if (tab === 'tracking') {
+    content.innerHTML = `<h2 class="font-display text-2xl" style="margin-bottom: 24px;">پیگیری سفارش ش-۲۸۳۱</h2>
+      <div style="background: var(--bg); padding: 24px; border-radius: 4px; margin-bottom: 24px;">
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px;">تاریخ تحویل تخمینی</div>
+        <div style="font-size: 1.5rem; font-weight: 700;">۱۸ تیر ۱۴۰۵</div>
+      </div>
+      <div class="tracking-timeline">
+        <div class="tracking-step completed"><h4>ثبت سفارش</h4><p>۷ تیر ۱۴۰۵ · ۱۰:۲۴</p></div>
+        <div class="tracking-step completed"><h4>تأیید پرداخت</h4><p>۷ تیر ۱۴۰۵ · ۱۰:۲۵</p></div>
+        <div class="tracking-step completed"><h4>در حال پردازش</h4><p>۸ تیر ۱۴۰۵ · ۱۴:۱۵</p></div>
+        <div class="tracking-step completed"><h4>ارسال شد</h4><p>۱۰ تیر ۱۴۰۵ · ۹:۰۰ · کد پیگیری: ۱۲۳۴۵۶۷۸۹۰</p></div>
+        <div class="tracking-step active"><h4>در مسیر تحویل</h4><p>۱۳ تیر ۱۴۰۵ · مرکز توزیع تهران</p></div>
+        <div class="tracking-step"><h4>برای تحویل</h4><p>در انتظار</p></div>
+        <div class="tracking-step"><h4>تحویل داده شد</h4><p>در انتظار</p></div>
+      </div>`;
+  } else if (tab === 'addresses') {
+    content.innerHTML = `<h2 class="font-display text-2xl" style="margin-bottom: 24px;">آدرس‌های ذخیره شده</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="padding: 24px; border: 1px solid var(--border); border-radius: 4px;">
+          <div style="font-weight: 600; margin-bottom: 8px;">خانه</div>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">سارا احمدی<br/>تهران، خیابان ولیعصر، پلاک ۱۲۳<br/>کد پستی: ۱۴۱۶۸۷۵۳۲۱<br/>ایران</div>
+        </div>
+        <div style="padding: 24px; border: 1px dashed var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--accent);">
+          + افزودن آدرس جدید
+        </div>
+      </div>`;
+  } else if (tab === 'settings') {
+    content.innerHTML = `<h2 class="font-display text-2xl" style="margin-bottom: 24px;">تنظیمات حساب</h2>
+      <div class="form-group"><label class="form-label">اعلان‌های ایمیلی</label>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+          <label style="display: flex; align-items: center; gap: 12px;"><input type="checkbox" checked /> به‌روزرسانی سفارش</label>
+          <label style="display: flex; align-items: center; gap: 12px;"><input type="checkbox" checked /> پیشنهادهای ویژه</label>
+          <label style="display: flex; align-items: center; gap: 12px;"><input type="checkbox" /> خبرنامه</label>
+        </div>
+      </div>
+      <div class="form-group" style="margin-top: 24px;"><label class="form-label">تغییر رمز عبور</label>
+        <input type="password" class="form-input" placeholder="رمز فعلی" style="margin-bottom: 12px;" />
+        <input type="password" class="form-input" placeholder="رمز جدید" style="margin-bottom: 12px;" />
+        <input type="password" class="form-input" placeholder="تأیید رمز جدید" />
+      </div>
+      <button class="btn btn-primary" style="margin-top: 16px;">ذخیره تنظیمات</button>`;
+  }
+}
+
+function switchAdminTab(el, tab) {
+  document.querySelectorAll('.admin-nav-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+  if (tab === 'dashboard') renderAdminDashboard();
+  else if (tab === 'products') renderAdminProducts();
+  else if (tab === 'orders') renderAdminOrders();
+  else if (tab === 'customers') renderAdminCustomers();
+  else if (tab === 'analytics') renderAdminAnalytics();
+  else if (tab === 'inventory') renderAdminInventory();
+  else if (tab === 'cms') renderAdminCMS();
+  else if (tab === 'settings') renderAdminSettings();
+}
+
+function renderAdminDashboard() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header">
+      <h1>نمای کلی داشبورد</h1>
+      <div style="display: flex; gap: 12px;">
+        <select class="shop-sort"><option>۷ روز گذشته</option><option>۳۰ روز گذشته</option><option>امسال</option></select>
+        <button class="btn btn-primary btn-sm">خروجی گزارش</button>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-label">کل درآمد</div><div class="stat-value">${toPersianNum(482940000).replace(/\B(?=(\d{3})+(?!\d))/g, ',')} تومان</div><div class="stat-change">↑ ۱۲.۵٪ نسبت به هفته گذشته</div></div>
+      <div class="stat-card"><div class="stat-label">سفارش‌ها</div><div class="stat-value">${toPersianNum(342)}</div><div class="stat-change">↑ ۸.۲٪ نسبت به هفته گذشته</div></div>
+      <div class="stat-card"><div class="stat-label">مشتریان</div><div class="stat-value">${toPersianNum(1847)}</div><div class="stat-change">↑ ۱۵.۳٪ نسبت به هفته گذشته</div></div>
+      <div class="stat-card"><div class="stat-label">میانگین ارزش سفارش</div><div class="stat-value">${toPersianNum(1410000)} تومان</div><div class="stat-change negative">↓ ۲.۱٪ نسبت به هفته گذشته</div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px;">
+      <div style="background: var(--bg-alt); padding: 24px; border-radius: 4px; border: 1px solid var(--border);">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;">روند درآمد</h3>
+        <div style="height: 240px; display: flex; align-items: flex-end; gap: 8px;">
+          ${[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map(h => `<div style="flex: 1; background: var(--gradient); border-radius: 2px 2px 0 0; height: ${h}%;"></div>`).join('')}
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.75rem; color: var(--text-muted);">
+          <span>فروردین</span><span>اردیبهشت</span><span>خرداد</span><span>تیر</span><span>مرداد</span><span>شهریور</span><span>مهر</span><span>آبان</span><span>آذر</span><span>دی</span><span>بهمن</span><span>اسفند</span>
+        </div>
+      </div>
+      <div style="background: var(--bg-alt); padding: 24px; border-radius: 4px; border: 1px solid var(--border);">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;">دسته‌بندی‌های برتر</h3>
+        ${[
+          { name: 'لب', value: 35, color: 'var(--accent)' },
+          { name: 'صورت', value: 28, color: 'var(--gold)' },
+          { name: 'چشم', value: 20, color: '#8B7355' },
+          { name: 'عطر', value: 12, color: '#B76E79' },
+          { name: 'مراقبت پوست', value: 5, color: '#6B6B6B' }
+        ].map(c => `<div style="margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;"><span>${c.name}</span><span>${toPersianNum(c.value)}٪</span></div>
+          <div style="height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden;"><div style="width: ${c.value}%; height: 100%; background: ${c.color};"></div></div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div style="background: var(--bg-alt); padding: 24px; border-radius: 4px; border: 1px solid var(--border);">
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;">سفارش‌های اخیر</h3>
+      <table class="admin-table">
+        <thead><tr><th>شماره سفارش</th><th>مشتری</th><th>محصول</th><th>مبلغ</th><th>وضعیت</th><th>تاریخ</th></tr></thead>
+        <tbody>
+          <tr><td>ش-۲۸۴۷</td><td>سارا احمدی</td><td>رژ لب مات مخملی × ۲</td><td>۵۶۰,۰۰۰ تومان</td><td><span class="status-badge success">تحویل شده</span></td><td>۱۲ تیر</td></tr>
+          <tr><td>ش-۲۸۴۶</td><td>نازنین محمدی</td><td>عطر اکسیر گل رز</td><td>۱,۰۵۰,۰۰۰ تومان</td><td><span class="status-badge warning">ارسال شده</span></td><td>۱۲ تیر</td></tr>
+          <tr><td>ش-۲۸۴۵</td><td>مریم رضایی</td><td>سرم طلای ۲۴ عیار</td><td>۱,۲۵۰,۰۰۰ تومان</td><td><span class="status-badge warning">در حال پردازش</span></td><td>۱۱ تیر</td></tr>
+          <tr><td>ش-۲۸۴۴</td><td>زهرا کریمی</td><td>پالت ساعت طلایی</td><td>۶۸۰,۰۰۰ تومان</td><td><span class="status-badge success">تحویل شده</span></td><td>۱۱ تیر</td></tr>
+          <tr><td>ش-۲۸۴۳</td><td>فاطمه نوری</td><td>کرم پودر ابریشمی</td><td>۵۸۰,۰۰۰ تومان</td><td><span class="status-badge danger">لغو شده</span></td><td>۱۰ تیر</td></tr>
+        </tbody>
+      </table>
+    </div>`;
+}
+
+function renderAdminProducts() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header">
+      <h1>محصولات</h1>
+      <button class="btn btn-primary btn-sm">+ افزودن محصول</button>
+    </div>
+    <div class="search-bar" style="margin-bottom: 24px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="جستجوی محصولات..." />
+    </div>
+    <table class="admin-table">
+      <thead><tr><th>محصول</th><th>دسته‌بندی</th><th>قیمت</th><th>موجودی</th><th>وضعیت</th><th>عملیات</th></tr></thead>
+      <tbody>
+        ${PRODUCTS.map(p => `<tr>
+          <td><div style="display: flex; align-items: center; gap: 12px;"><img src="${p.image}" style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px;" /><div><div style="font-weight: 600;">${p.name}</div><div style="font-size: 0.8rem; color: var(--text-muted);">${p.brand}</div></div></div></td>
+          <td>${p.category}</td>
+          <td>${formatPrice(p.price)}</td>
+          <td>${toPersianNum(Math.floor(Math.random() * 100) + 20)}</td>
+          <td><span class="status-badge success">فعال</span></td>
+          <td><button class="btn btn-ghost btn-sm">ویرایش</button> <button class="btn btn-ghost btn-sm" style="color: var(--danger);">حذف</button></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderAdminOrders() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header">
+      <h1>سفارش‌ها</h1>
+      <div style="display: flex; gap: 12px;">
+        <select class="shop-sort"><option>همه وضعیت‌ها</option><option>در انتظار</option><option>ارسال شده</option><option>تحویل شده</option></select>
+        <button class="btn btn-outline btn-sm">خروجی CSV</button>
+      </div>
+    </div>
+    <table class="admin-table">
+      <thead><tr><th>شماره سفارش</th><th>مشتری</th><th>تعداد کالا</th><th>مبلغ</th><th>پرداخت</th><th>وضعیت</th><th>تاریخ</th><th>عملیات</th></tr></thead>
+      <tbody>
+        ${Array.from({ length: 8 }, (_, i) => {
+          const statuses = [['تحویل شده', 'success'], ['ارسال شده', 'warning'], ['در حال پردازش', 'warning'], ['در انتظار', 'warning'], ['لغو شده', 'danger']];
+          const s = statuses[i % statuses.length];
+          return `<tr>
+            <td>ش-${toPersianNum(2847 - i)}</td>
+            <td>مشتری ${toPersianNum(i + 1)}</td>
+            <td>${toPersianNum(Math.floor(Math.random() * 3) + 1)} کالا</td>
+            <td>${formatPrice(Math.random() * 2000000 + 500000)}</td>
+            <td>کارت بانکی</td>
+            <td><span class="status-badge ${s[1]}">${s[0]}</span></td>
+            <td>${toPersianNum(15 - Math.floor(i / 2))} تیر</td>
+            <td><button class="btn btn-ghost btn-sm">مشاهده</button></td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderAdminCustomers() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header"><h1>مشتریان</h1><button class="btn btn-primary btn-sm">+ افزودن مشتری</button></div>
+    <table class="admin-table">
+      <thead><tr><th>مشتری</th><th>ایمیل</th><th>سفارش‌ها</th><th>مبلغ خرید</th><th>تاریخ عضویت</th><th>عملیات</th></tr></thead>
+      <tbody>
+        ${[
+          ['سارا احمدی', 'sophia@example.com', '۱۲', '۱۸,۴۷۰,۰۰۰', 'فروردین ۱۴۰۳'],
+          ['نازنین محمدی', 'emma@example.com', '۸', '۹,۶۴۰,۰۰۰', 'خرداد ۱۴۰۳'],
+          ['مریم رضایی', 'isabella@example.com', '۱۵', '۲۳,۴۰۰,۰۰۰', 'اردیبهشت ۱۴۰۳'],
+          ['زهرا کریمی', 'olivia@example.com', '۶', '۵,۴۲۰,۰۰۰', 'مرداد ۱۴۰۳'],
+          ['فاطمه نوری', 'ava@example.com', '۴', '۳,۲۸۰,۰۰۰', 'شهریور ۱۴۰۳']
+        ].map(([n, e, o, s, j]) => `<tr>
+          <td><div style="display: flex; align-items: center; gap: 12px;"><div style="width: 36px; height: 36px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">${n.split(' ').map(x => x[0]).join('')}</div><div style="font-weight: 600;">${n}</div></div></td>
+          <td>${e}</td>
+          <td>${o}</td>
+          <td>${s} تومان</td>
+          <td>${j}</td>
+          <td><button class="btn btn-ghost btn-sm">مشاهده</button></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderAdminAnalytics() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header"><h1>تحلیل‌ها</h1><select class="shop-sort"><option>۳۰ روز گذشته</option><option>۹۰ روز گذشته</option><option>امسال</option></select></div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-label">بازدید صفحات</div><div class="stat-value">${toPersianNum(124500)}</div><div class="stat-change">↑ ۲۴.۳٪</div></div>
+      <div class="stat-card"><div class="stat-label">نرخ تبدیل</div><div class="stat-value">${toPersianNum(3.8)}٪</div><div class="stat-change">↑ ۰.۵٪</div></div>
+      <div class="stat-card"><div class="stat-label">نرخ پرش</div><div class="stat-value">${toPersianNum(32.1)}٪</div><div class="stat-change negative">↓ ۲.۴٪</div></div>
+      <div class="stat-card"><div class="stat-label">میانگین جلسه</div><div class="stat-value">۴ دقیقه و ۳۲ ثانیه</div><div class="stat-change">↑ ۱۸ ثانیه</div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <div style="background: var(--bg-alt); padding: 24px; border-radius: 4px; border: 1px solid var(--border);">
+        <h3 style="font-weight: 700; margin-bottom: 20px;">منابع ترافیک</h3>
+        ${[['جستجوی ارگانیک', 42], ['مستقیم', 28], ['شبکه‌های اجتماعی', 18], ['ایمیل', 8], ['ارجاعی', 4]].map(([n, v]) => `<div style="margin-bottom: 16px;"><div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;"><span>${n}</span><span>${toPersianNum(v)}٪</span></div><div style="height: 6px; background: var(--bg); border-radius: 3px;"><div style="width: ${v}%; height: 100%; background: var(--accent); border-radius: 3px;"></div></div></div>`).join('')}
+      </div>
+      <div style="background: var(--bg-alt); padding: 24px; border-radius: 4px; border: 1px solid var(--border);">
+        <h3 style="font-weight: 700; margin-bottom: 20px;">محصولات برتر</h3>
+        ${PRODUCTS.slice(0, 5).map((p, i) => `<div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">${toPersianNum(i + 1)}</div>
+          <img src="${p.image}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;" />
+          <div style="flex: 1;"><div style="font-weight: 600; font-size: 0.9rem;">${p.name}</div><div style="font-size: 0.8rem; color: var(--text-muted);">${toPersianNum(Math.floor(Math.random() * 200) + 50)} فروش</div></div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+}
+
+function renderAdminInventory() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header"><h1>مدیریت موجودی</h1><button class="btn btn-primary btn-sm">+ افزودن موجودی</button></div>
+    <table class="admin-table">
+      <thead><tr><th>محصول</th><th>شناسه</th><th>موجودی فعلی</th><th>سطح سفارش مجدد</th><th>وضعیت</th><th>عملیات</th></tr></thead>
+      <tbody>
+        ${PRODUCTS.map(p => {
+          const stock = Math.floor(Math.random() * 150) + 5;
+          const status = stock < 20 ? ['موجودی کم', 'danger'] : stock < 50 ? ['متوسط', 'warning'] : ['موجود', 'success'];
+          return `<tr><td style="font-weight: 600;">${p.name}</td><td>${p.sku}</td><td>${toPersianNum(stock)} واحد</td><td>۲۰ واحد</td><td><span class="status-badge ${status[1]}">${status[0]}</span></td><td><button class="btn btn-ghost btn-sm">تأمین مجدد</button></td></tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+
+function renderAdminCMS() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header"><h1>مدیریت محتوا</h1><button class="btn btn-primary btn-sm">+ مطلب جدید</button></div>
+    <div style="display: grid; gap: 16px;">
+      ${BLOG_POSTS.map(b => `<div style="background: var(--bg-alt); padding: 20px; border-radius: 4px; border: 1px solid var(--border); display: flex; gap: 16px; align-items: center;">
+        <img src="${b.image}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;" />
+        <div style="flex: 1;">
+          <div style="font-size: 0.75rem; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 4px; font-weight: 600;">${b.category}</div>
+          <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">${b.title}</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">${b.date} · ${b.readTime}</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-ghost btn-sm">ویرایش</button>
+          <button class="btn btn-ghost btn-sm" style="color: var(--danger);">حذف</button>
+        </div>
+      </div>`).join('')}
+    </div>`;
+}
+
+function renderAdminSettings() {
+  document.getElementById('admin-content').innerHTML = `
+    <div class="admin-header"><h1>تنظیمات</h1></div>
+    <div style="background: var(--bg-alt); padding: 32px; border-radius: 4px; border: 1px solid var(--border);">
+      <h3 style="font-weight: 700; margin-bottom: 20px;">تنظیمات فروشگاه</h3>
+      <div class="form-grid">
+        <div class="form-group"><label class="form-label">نام فروشگاه</label><input type="text" class="form-input" value="لوکس بیوتی" /></div>
+        <div class="form-group"><label class="form-label">واحد پول</label><select class="form-input"><option>تومان (﷼)</option><option>ریال</option><option>دلار ($)</option></select></div>
+        <div class="form-group full"><label class="form-label">ایمیل فروشگاه</label><input type="email" class="form-input" value="hello@luxe-beauty.ir" /></div>
+        <div class="form-group full"><label class="form-label">آدرس فروشگاه</label><input type="text" class="form-input" value="تهران، خیابان ولیعصر، پلاک ۱۲۳" /></div>
+      </div>
+      <h3 style="font-weight: 700; margin: 32px 0 20px;">درگاه‌های پرداخت</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <label style="display: flex; align-items: center; justify-content: space-between; padding: 16px; border: 1px solid var(--border); border-radius: 4px;"><span><strong>زرین‌پال</strong><div style="font-size: 0.85rem; color: var(--text-muted);">کارت‌های بانکی، پرداخت آنلاین</div></span><input type="checkbox" checked /></label>
+        <label style="display: flex; align-items: center; justify-content: space-between; padding: 16px; border: 1px solid var(--border); border-radius: 4px;"><span><strong>آی‌دی‌پی</strong><div style="font-size: 0.85rem; color: var(--text-muted);">درگاه پرداخت معتبر</div></span><input type="checkbox" checked /></label>
+      </div>
+      <button class="btn btn-primary" style="margin-top: 24px;">ذخیره تنظیمات</button>
+    </div>`;
+}
+
+function openAuthModal() { document.getElementById('auth-modal').classList.add('active'); }
+function closeAuthModal() { document.getElementById('auth-modal').classList.remove('active'); }
+function switchAuthTab(el, tab) {
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('auth-register-name').style.display = tab === 'register' ? 'block' : 'none';
+  document.getElementById('auth-submit').textContent = tab === 'register' ? 'ایجاد حساب' : 'ورود';
+}
+function handleAuth(e) {
+  e.preventDefault();
+  closeAuthModal();
+  showToast('به لوکس خوش آمدید! ✨', 'success');
+}
+
+function handleNewsletter(e) {
+  e.preventDefault();
+  showToast('با موفقیت عضو شدید! به حلقه لوکس خوش آمدید.', 'success');
+  e.target.reset();
+}
+function handleContact(e) {
+  e.preventDefault();
+  showToast('پیام ارسال شد! به زودی پاسخ می‌دهیم.', 'success');
+  e.target.reset();
+}
+
+function showToast(msg, type = 'success') {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `<span>${type === 'success' ? '✓' : '✗'}</span><span>${msg}</span>`;
+  container.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(-100px)'; toast.style.transition = 'all 0.3s'; setTimeout(() => toast.remove(), 300); }, 3000);
+}
+
+function startCountdown() {
+  const end = Date.now() + 2 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000 + 32 * 60 * 1000 + 18 * 1000;
+  setInterval(() => {
+    const diff = Math.max(0, end - Date.now());
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-days').textContent = toPersianNum(String(d).padStart(2, '0'));
+    document.getElementById('cd-hours').textContent = toPersianNum(String(h).padStart(2, '0'));
+    document.getElementById('cd-mins').textContent = toPersianNum(String(m).padStart(2, '0'));
+    document.getElementById('cd-secs').textContent = toPersianNum(String(s).padStart(2, '0'));
+  }, 1000);
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.payment-method')) {
+    document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
+    e.target.closest('.payment-method').classList.add('active');
+  }
+});
+
+document.getElementById('auth-modal').addEventListener('click', (e) => {
+  if (e.target.id === 'auth-modal') closeAuthModal();
+});
+</script>
+</body>
+</html>
+
